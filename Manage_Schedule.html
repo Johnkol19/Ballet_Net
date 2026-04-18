@@ -10,15 +10,16 @@
     </head>
 
     <body>
-        <nav class="navbar navbar-light bg-light">
+        <nav class="navbar navbar-light bg-light mb-4 shadow-sm">
             <div class="container-fluid">
               <a class="navbar-brand fs-1 fw-bold d-flex align-items-center" href="#">
                 <img src="../photos/Logo.png" alt="Ballet Arts Logo" height="100" class="me-3">
                 Ballet Net
               </a>
             </div>
-          </nav>
+        </nav>
 
+        <div class="container">
           <ul class="nav nav-tabs" id="scheduleTabs" role="tablist">
             <li class="nav-item" role="presentation">
               <button class="nav-link active" id="room1-tab" data-bs-toggle="tab" data-bs-target="#room1" type="button" role="tab">Αίθουσα 1</button>
@@ -30,36 +31,107 @@
           
           <div class="tab-content" id="scheduleTabsContent">
             
-            <div class="tab-pane fade show active p-3 border border-top-0 bg-white" id="room1" role="tabpanel">
-              <h6>Πρόγραμμα Αίθουσας 1</h6>
-              <table class="table table-striped table-hover mt-3">
-                <thead class="table-dark">
-                  <tr><th>Ημέρα</th><th>Ώρα</th><th>Μάθημα</th><th>Δάσκαλος</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td>Δευτέρα</td><td>18:00</td><td>Ballet Basic</td><td>Μαρία</td></tr>
-                  <tr><td>Τρίτη</td><td>19:00</td><td>Contemporary</td><td>Νίκος</td></tr>
-                  <tr><td>Τεταρτη</td><td>18:00</td><td>Ballet Basic</td><td>Μαρία</td></tr>
-                  <tr><td>Πεμπτη</td><td>18:00</td><td>Ballet Basic</td><td>Μαρία</td></tr>
-                  <tr><td>Παρασκευη</td><td>18:00</td><td>Ballet Basic</td><td>Μαρία</td></tr>
-                </tbody>
-              </table>
+            <!-- Αιθουσα 1-->
+            <div class="tab-pane fade show active p-0 border border-top-0 bg-white" id="room1" role="tabpanel">
+              <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                  <thead class="table-dark">
+                    <tr>
+                      <th>Ώρα</th>
+                      <th>Μάθημα</th>
+                      <th>Τμήμα / Επίπεδο</th>
+                      <th class="text-end">Ενέργειες</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="table-light"><td colspan="4" class="fw-bold text-primary">ΔΕΥΤΕΡΑ</td></tr>
+                    <tr><td>17:30 - 18:15</td><td>Ballet</td><td>Pre-Primary</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+                    <tr><td>18:15 - 19:00</td><td>Ballet</td><td>Primary</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+                    <tr><td>19:00 - 20:30</td><td>Ballet</td><td>Intermediate Foundation</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+                    <tr><td>20:30 - 22:00</td><td>Ballet</td><td>Adult</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+
+                    <tr class="table-light"><td colspan="4" class="fw-bold text-primary">ΤΡΙΤΗ</td></tr>
+                    <tr><td>17:00 - 18:00</td><td>Ballet</td><td>Grade 3</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+                    <tr><td>18:00 - 19:00</td><td>Musical</td><td>Kids</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+                    <tr><td>19:00 - 20:00</td><td>Contemporary</td><td>Level 1</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+                    <tr><td>20:00 - 21:30</td><td>Ballet</td><td>Intermediate Foundation</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+
+                    <tr class="table-light"><td colspan="4" class="fw-bold text-primary">ΤΕΤΑΡΤΗ</td></tr>
+                    <tr><td>17:30 - 18:15</td><td>Ballet</td><td>Pre-Primary</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+                    <tr><td>18:15 - 19:00</td><td>Ballet</td><td>Grade 1</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+                    <tr><td>19:00 - 20:30</td><td>Ballet</td><td>Advanced Foundation</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+                    <tr><td>20:30 - 22:00</td><td>Ballet</td><td>Advanced</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+
+                    <tr class="table-light"><td colspan="4" class="fw-bold text-primary">ΠΕΜΠΤΗ</td></tr>
+                    <tr><td>17:00 - 18:00</td><td>Ballet</td><td>Grade 3</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+                    <tr><td>18:00 - 19:00</td><td>Modern</td><td>Grade 3</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+                    <tr><td>19:00 - 20:30</td><td>Modern</td><td>Grade 5</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+                    <tr><td>20:30 - 21:30</td><td>Ballet</td><td>Intermediate Foundation</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+
+                    <tr class="table-light"><td colspan="4" class="fw-bold text-primary">ΠΑΡΑΣΚΕΥΗ</td></tr>
+                    <tr><td>17:00 - 18:00</td><td>Ballet</td><td>Grade 2</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+                    <tr><td>18:00 - 19:00</td><td>Modern</td><td>Grade 2</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+                    <tr><td>19:00 - 20:00</td><td>Musical</td><td>Advanced</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+                    <tr><td>20:00 - 21:30</td><td>Contemporary</td><td>Level 2</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+
+                    <tr class="table-light"><td colspan="4" class="fw-bold text-primary">ΣΑΒΒΑΤΟ</td></tr>
+                    <tr><td>10:00 - 11:30</td><td>Ballet</td><td>Intermediate Foundation</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+                    <tr><td>11:30 - 13:00</td><td>Ballet</td><td>Advanced Foundation</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+                    <tr><td>13:00 - 14:30</td><td>Ballet</td><td>Advanced</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+                    <tr><td>17:00 - 18:00</td><td>Street Dance</td><td>Level 2</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+                    <tr><td>18:00 - 19:00</td><td>Street Dance</td><td>Level 1</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-          
-            <div class="tab-pane fade p-3 border border-top-0 bg-white" id="room2" role="tabpanel">
-              <h6>Πρόγραμμα Αίθουσας 2</h6>
-              <table class="table table-striped table-hover mt-3">
-                <thead class="table-dark">
-                  <tr><th>Ημέρα</th><th>Ώρα</th><th>Μάθημα</th><th>Δάσκαλος</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td>Δευτέρα</td><td>17:00</td><td>Jazz</td><td>Άννα</td></tr>
-                </tbody>
-              </table>
+            
+            <!-- Αιθουσα 2-->
+            <div class="tab-pane fade p-0 border border-top-0 bg-white" id="room2" role="tabpanel">
+              <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                  <thead class="table-dark">
+                    <tr>
+                      <th>Ώρα</th>
+                      <th>Μάθημα</th>
+                      <th>Τμήμα / Επίπεδο</th>
+                      <th class="text-end">Ενέργειες</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="table-light"><td colspan="4" class="fw-bold text-primary">ΔΕΥΤΕΡΑ</td></tr>
+                    <tr><td>17:15 - 18:00</td><td>Ballet</td><td>Pre - School</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+                    <tr><td>18:00 - 19:30</td><td>Ballet</td><td>Intermediate</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+                    <tr><td>20:00 - 21:00</td><td>Free</td><td>Choreography</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+
+                    <tr class="table-light"><td colspan="4" class="fw-bold text-primary">ΤΡΙΤΗ</td></tr>
+                    <tr><td>17:00 - 18:00</td><td>Ballet</td><td>Grade 2</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+                    <tr><td>18:00 - 18:45</td><td>Ballet</td><td>Pre - School</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+
+                    <tr class="table-light"><td colspan="4" class="fw-bold text-primary">ΤΕΤΑΡΤΗ</td></tr>
+                    <tr><td>16:45 - 17:30</td><td>Ballet</td><td>Pre - School</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+                    <tr><td>17:30 - 19:00</td><td>Ballet</td><td>Intermediate</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+                    <tr><td>20:30 - 22:00</td><td>Ballet</td><td>Adult</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+
+                    <tr class="table-light"><td colspan="4" class="fw-bold text-primary">ΠΕΜΠΤΗ</td></tr>
+                    <tr><td>17:15 - 18:00</td><td>Modern</td><td>Grade 1</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+                    <tr><td>18:00 - 18:45</td><td>Ballet</td><td>Primary</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+                    <tr><td>21:00 - 22:00</td><td>Musical</td><td>Adult</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+
+                    <tr class="table-light"><td colspan="4" class="fw-bold text-primary">ΠΑΡΑΣΚΕΥΗ</td></tr>
+                    <tr><td>17:00 - 18:00</td><td>Ballet</td><td>Grade 1</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+                    <tr><td>18:00 - 18:45</td><td>Ballet</td><td>Pre - School</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
+
+                    <tr class="table-light"><td colspan="4" class="fw-bold text-primary">ΣΑΒΒΑΤΟ</td></tr>
+                    <tr><td colspan="4" class="text-muted text-center py-3">Δεν υπάρχουν προγραμματισμένα μαθήματα</td></tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           
           </div>
-          <!--συνδέσει το αρχείο JS της Bootstrap-->
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        </div>
+
+        <!--συνδέσει το αρχείο JS της Bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
