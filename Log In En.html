@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="background_style.css">
         <title>
-            Sign Up BalletArts
+            Log In - Ballet Net
         </title>
         <link rel="icon" type="image/png" href="BalletArts.png">
         <style>
@@ -60,12 +60,13 @@
                 text-decoration: none; 
                 font-family: 'Lucida Sans', sans-serif;
                 font-weight: bold;
-                transition: color 0.3s;
-            }
+                transition: color 0.3s;}
             .text-link:hover {
                 color: #5d575d;          
-                text-decoration: underline;
-      }
+                text-decoration: underline;}
+            .pink-border:focus {
+                border-color: #eeb2ba;
+                box-shadow: 0 0 0 0.25rem rgba(238, 178, 186, 0.25);}
         </style>
     </head>
 
@@ -76,12 +77,13 @@
                     <img src="BalletArts.png" alt="Ballet Arts Logo" height="50" class="me-3">
                     Ballet Net
                     <div class="mb-3">
-                    <label for="balletSelect" class="form-label fw-bold" style="color: #5d575d;"> Select Language: </label>
-                    <select class="form-select pink-border" id="balletSelect">
-                       <option selected disabled> Choose a Language </option>
-                       <option value="1"> English 🏴󠁧󠁢󠁥󠁮󠁧󠁿 </option>
-                       <option value="2"> Greek 🇬🇷 </option>
+                    <label for="languageSelect" class="form-label fw-bold" style="color: #5d575d;">Select Language:</label>
+                    <select class="form-select pink-border" id="languageSelect" onchange="location = this.value;">
+                        <option selected disabled>Options:</option>
+                            <option value="Log In En.html">English 🏴󠁧󠁢󠁥󠁮󠁧󠁿</option>
+                            <option value="Log In GR.html">Greek 🇬🇷</option>
                     </select>
+                    </div>
                 </a>
             </div>
         </nav>  
@@ -111,7 +113,7 @@
         <table class="my-table">
         <thead >
             <tr>
-            <th style="background-color:  rgba(220, 143, 143, 0.8); text-align: center;"> Sign Up</th>
+            <th style="background-color:  rgba(220, 143, 143, 0.8); text-align: center;"> Log In</th>
             </tr>
         </thead>
             <tbody>
@@ -122,12 +124,13 @@
                     <td> <input type="password" class="my-pink-input" placeholder=" Password"> </td>
                 </tr>
                 <tr>
-                    <td> <input type="password" class="my-pink-input" placeholder=" Password Again"> </td>
-                </tr>
-                <tr>
                     <td>
-                        <a href="Log In Page.html" class="text-link">Log In</a>
-                        <a href="Contact Us.html" class="text-link">Contact Us</a>
+                        <label class="checkbox-container">
+                        <input type="checkbox">
+                        <span> Remember me </span>
+                        </label>
+                        <a href="Sign Up En.html" class="text-link"> Sign Up </a>
+                        <a href="Contact Us En.html" class="text-link"> Contact Us</a>
                     </td>
                 </tr>
             </tbody>
