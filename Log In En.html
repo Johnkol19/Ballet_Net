@@ -93,24 +93,44 @@
         <audio id="myAudio" loop>
             <source src="Abba - Money, Money, Money (Official Music Video).mp3" type="audio/mpeg">
         </audio>
-        <button id="mute-toggle">🔈 Tap x3 </button>
+        <button id="mute-toggle" class="blue-play-btn">🔇</button>
         <script>
             const audio = document.getElementById("myAudio");
             const btn = document.getElementById("mute-toggle");
+            window.addEventListener("load", () => {
+                const savedTime = localStorage.getItem('musicTime');
+                if (savedTime) {
+                    audio.currentTime = parseFloat(savedTime);
+                }
+            });
+            const wasPlaying = localStorage.getItem('musicPlaying');    
+            if (wasPlaying === 'true') {
+                btn.textContent = "⏸";
+            }    
+            audio.ontimeupdate = function() {
+            localStorage.setItem('musicTime', audio.currentTime);
+            };
             btn.addEventListener("click", function() {
                 if (audio.paused) {
-                    audio.play();
+                    audio.play().then(() => {
                     audio.muted = false;
-                    btn.textContent = "🔊"; 
+                    btn.textContent = "▶";
+                    localStorage.setItem('musicPlaying', 'true');
+                }).catch(error => {
+                    console.log("Ο browser μπλόκαρε την αυτόματη εκκίνηση");
+                });
                 } else {
+                // Αν παίζει ήδη, κάνει εναλλαγή Mute/Unmute
                     if (audio.muted) {
                         audio.muted = false;
-                        btn.textContent = "🔊";
+                        btn.textContent = "▶";
+                        localStorage.setItem('musicPlaying', 'true');
                     } else {
                         audio.muted = true;
-                        btn.textContent = "🔇"; 
+                        btn.textContent = "⏸";
+                        localStorage.setItem('musicPlaying', 'false');
                     }
-               }
+                }
             });
         </script>
         <table class="my-table">
