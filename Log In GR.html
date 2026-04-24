@@ -98,37 +98,40 @@
             const audio = document.getElementById("myAudio");
             const btn = document.getElementById("mute-toggle");
             window.addEventListener("load", () => {
-                const savedTime = localStorage.getItem('musicTime');
+                const savedTime = sessionStorage.getItem('musicTime');
                 if (savedTime) {
                     audio.currentTime = parseFloat(savedTime);
                 }
+                const wasPlaying = sessionStorage.getItem('musicPlaying'); 
+                if (wasPlaying === null) {
+                    btn.textContent = "🎵"; // <-- Put your unique first-time emoji here
+                } else if (wasPlaying === 'true') {
+                    btn.textContent = "⏸";
+                } else {
+                    btn.textContent = "▶";
+                }
             });
-            const wasPlaying = localStorage.getItem('musicPlaying');    
-            if (wasPlaying === 'true') {
-                btn.textContent = "⏸";
-            }    
             audio.ontimeupdate = function() {
-            localStorage.setItem('musicTime', audio.currentTime);
+                sessionStorage.setItem('musicTime', audio.currentTime);
             };
             btn.addEventListener("click", function() {
                 if (audio.paused) {
                     audio.play().then(() => {
                     audio.muted = false;
                     btn.textContent = "▶";
-                    localStorage.setItem('musicPlaying', 'true');
+                    sessionStorage.setItem('musicPlaying', 'true');
                 }).catch(error => {
                     console.log("Ο browser μπλόκαρε την αυτόματη εκκίνηση");
                 });
                 } else {
-                // Αν παίζει ήδη, κάνει εναλλαγή Mute/Unmute
                     if (audio.muted) {
                         audio.muted = false;
                         btn.textContent = "▶";
-                        localStorage.setItem('musicPlaying', 'true');
+                        sessionStorage.setItem('musicPlaying', 'true');
                     } else {
                         audio.muted = true;
                         btn.textContent = "⏸";
-                        localStorage.setItem('musicPlaying', 'false');
+                        sessionStorage.setItem('musicPlaying', 'false');
                     }
                 }
             });
