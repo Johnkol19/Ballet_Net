@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="background_style.css">
         <title>
-            Log In - Ballet Net
+            Σύνδεση - Ballet Net
         </title>
         <link rel="icon" type="image/png" href="BalletArts.png">
         <style>
@@ -79,14 +79,7 @@
                     <a href="Approve_Content.html" class="text-link"> Approve Content </a>
                     <a href="Manage_Schedule.html" class="text-link"> Manage Schedule </a>
                     <a href="Landing_Page.html" class="text-link"> Landing Page </a>
-                    <div class="mb-3">
-                    <label for="languageSelect" class="form-label fw-bold" style="color: #5d575d;"> Διαλέξτε Γλώσσα: </label>
-                    <select class="form-select pink-border" id="languageSelect" onchange="location = this.value;">
-                        <option selected disabled> Επιλογές: </option>
-                            <option value="Log In En.html"> Αγγλικά 🏴󠁧󠁢󠁥󠁮󠁧󠁿 </option>
-                            <option value="Log In GR.html"> Ελληνικά 🇬🇷 </option>
-                    </select>
-                    </div>
+                    <a href="Log In En.html" class="text-link"> English 🏴󠁧󠁢󠁥󠁮󠁧󠁿 </a>
                 </a>
             </div>
         </nav>  
@@ -98,40 +91,37 @@
             const audio = document.getElementById("myAudio");
             const btn = document.getElementById("mute-toggle");
             window.addEventListener("load", () => {
-                const savedTime = sessionStorage.getItem('musicTime');
+                const savedTime = localStorage.getItem('musicTime');
                 if (savedTime) {
                     audio.currentTime = parseFloat(savedTime);
                 }
-                const wasPlaying = sessionStorage.getItem('musicPlaying'); 
-                if (wasPlaying === null) {
-                    btn.textContent = "🎵"; // <-- Put your unique first-time emoji here
-                } else if (wasPlaying === 'true') {
-                    btn.textContent = "⏸";
-                } else {
-                    btn.textContent = "▶";
-                }
             });
+            const wasPlaying = localStorage.getItem('musicPlaying');    
+            if (wasPlaying === 'true') {
+                btn.textContent = "⏸";
+            }    
             audio.ontimeupdate = function() {
-                sessionStorage.setItem('musicTime', audio.currentTime);
+            localStorage.setItem('musicTime', audio.currentTime);
             };
             btn.addEventListener("click", function() {
                 if (audio.paused) {
                     audio.play().then(() => {
                     audio.muted = false;
                     btn.textContent = "▶";
-                    sessionStorage.setItem('musicPlaying', 'true');
+                    localStorage.setItem('musicPlaying', 'true');
                 }).catch(error => {
                     console.log("Ο browser μπλόκαρε την αυτόματη εκκίνηση");
                 });
                 } else {
+                // Αν παίζει ήδη, κάνει εναλλαγή Mute/Unmute
                     if (audio.muted) {
                         audio.muted = false;
                         btn.textContent = "▶";
-                        sessionStorage.setItem('musicPlaying', 'true');
+                        localStorage.setItem('musicPlaying', 'true');
                     } else {
                         audio.muted = true;
                         btn.textContent = "⏸";
-                        sessionStorage.setItem('musicPlaying', 'false');
+                        localStorage.setItem('musicPlaying', 'false');
                     }
                 }
             });
@@ -155,9 +145,11 @@
                         <input type="checkbox">
                         <span> Θυμήσου τα στηχεία μου</span>
                         </label>
-                        <a href="Forgot_Password GR.html" class="text-link"> Ξεχάσατε τον κωδικό σας; </a>
-                        <a href="Sign Up GR.html" class="text-link"> Εγγραφή </a>
-                        <a href="Contact Us GR.html" class="text-link"> Επικοινωνίστε μαζί μας </a>
+                        <a class="navbar-brand fs-1 fw-bold d-flex align-items-center" href="#">
+                            <a href="Forgot_Password GR.html" class="text-link"> Ξεχάσατε τον κωδικό σας; </a>
+                            <a href="Sign Up GR.html" class="text-link"> Εγγραφή </a>
+                            <a href="Contact Us GR.html" class="text-link"> Επικοινωνίστε μαζί μας </a>
+                        </a>
                     </td>
                 </tr>
             </tbody>

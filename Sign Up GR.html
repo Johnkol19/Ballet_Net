@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="background_style.css">
         <title>
-            Sign Up BalletArts
+            Εγγραφή - Ballet Net
         </title>
         <link rel="icon" type="image/png" href="BalletArts.png">
         <style>
@@ -60,12 +60,13 @@
                 text-decoration: none; 
                 font-family: 'Lucida Sans', sans-serif;
                 font-weight: bold;
-                transition: color 0.3s;
-            }
+                transition: color 0.3s;}
             .text-link:hover {
                 color: #5d575d;          
-                text-decoration: underline;
-      }
+                text-decoration: underline;}
+            .pink-border:focus {
+                border-color: #eeb2ba;
+                box-shadow: 0 0 0 0.25rem rgba(238, 178, 186, 0.25);}
         </style>
     </head>
 
@@ -78,14 +79,7 @@
                     <a href="Approve_Content.html" class="text-link"> Approve Content </a>
                     <a href="Manage_Schedule.html" class="text-link"> Manage Schedule </a>
                     <a href="Landing_Page.html" class="text-link"> Landing Page </a>
-                    <div class="mb-3">
-                    <label for="languageSelect" class="form-label fw-bold" style="color: #5d575d;"> Διαλέξτε Γλώσσα: </label>
-                    <select class="form-select pink-border" id="languageSelect" onchange="location = this.value;">
-                        <option selected disabled> Επιλογές: </option>
-                            <option value="Sign Up En.html"> Αγγλικά 🏴󠁧󠁢󠁥󠁮󠁧󠁿 </option>
-                            <option value="Sign Up GR.html"> Ελληνικά 🇬🇷 </option>
-                    </select>
-                    </div>
+                    <a href="Sign Up En.html" class="text-link"> English 🏴󠁧󠁢󠁥󠁮󠁧󠁿 </a>
                 </a>
             </div>
         </nav>  
@@ -97,40 +91,37 @@
             const audio = document.getElementById("myAudio");
             const btn = document.getElementById("mute-toggle");
             window.addEventListener("load", () => {
-                const savedTime = sessionStorage.getItem('musicTime');
+                const savedTime = localStorage.getItem('musicTime');
                 if (savedTime) {
                     audio.currentTime = parseFloat(savedTime);
                 }
-                const wasPlaying = sessionStorage.getItem('musicPlaying'); 
-                if (wasPlaying === null) {
-                    btn.textContent = "🎵"; // <-- Put your unique first-time emoji here
-                } else if (wasPlaying === 'true') {
-                    btn.textContent = "⏸";
-                } else {
-                    btn.textContent = "▶";
-                }
             });
+            const wasPlaying = localStorage.getItem('musicPlaying');    
+            if (wasPlaying === 'true') {
+                btn.textContent = "⏸";
+            }    
             audio.ontimeupdate = function() {
-                sessionStorage.setItem('musicTime', audio.currentTime);
+            localStorage.setItem('musicTime', audio.currentTime);
             };
             btn.addEventListener("click", function() {
                 if (audio.paused) {
                     audio.play().then(() => {
                     audio.muted = false;
                     btn.textContent = "▶";
-                    sessionStorage.setItem('musicPlaying', 'true');
+                    localStorage.setItem('musicPlaying', 'true');
                 }).catch(error => {
                     console.log("Ο browser μπλόκαρε την αυτόματη εκκίνηση");
                 });
                 } else {
+                // Αν παίζει ήδη, κάνει εναλλαγή Mute/Unmute
                     if (audio.muted) {
                         audio.muted = false;
                         btn.textContent = "▶";
-                        sessionStorage.setItem('musicPlaying', 'true');
+                        localStorage.setItem('musicPlaying', 'true');
                     } else {
                         audio.muted = true;
                         btn.textContent = "⏸";
-                        sessionStorage.setItem('musicPlaying', 'false');
+                        localStorage.setItem('musicPlaying', 'false');
                     }
                 }
             });
@@ -152,9 +143,11 @@
                     <td> <input type="password" class="my-pink-input" placeholder=" Επανάληψη Κωδικού "> </td>
                 </tr>
                 <tr>
-                    <td class="d-flex justify-content-between align-items-center">
-                        <a href="Log In GR.html" class="text-link"> Συνδεθήτε </a>
-                        <a href="Contact Us GR.html" class="text-link"> Επικοινωνίστε μαζί μας </a>
+                    <td>
+                        <a class="navbar-brand fs-1 fw-bold d-flex align-items-center" href="#">
+                            <a href="Log In GR.html" class="text-link"> Συνδεθήτε </a>
+                            <a href="Contact Us GR.html" class="text-link"> Επικοινωνίστε μαζί μας </a>
+                        </a>
                     </td>
                 </tr>
             </tbody>

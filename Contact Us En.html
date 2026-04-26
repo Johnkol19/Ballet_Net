@@ -60,12 +60,13 @@
                 text-decoration: none; 
                 font-family: 'Lucida Sans', sans-serif;
                 font-weight: bold;
-                transition: color 0.3s;
-            }
+                transition: color 0.3s;}
             .text-link:hover {
                 color: #5d575d;          
-                text-decoration: underline;
-      }
+                text-decoration: underline;}
+            .pink-border:focus {
+                border-color: #eeb2ba;
+                box-shadow: 0 0 0 0.25rem rgba(238, 178, 186, 0.25);}
         </style>
     </head>
 
@@ -78,14 +79,7 @@
                     <a href="Approve_Content.html" class="text-link"> Approve Content </a>
                     <a href="Manage_Schedule.html" class="text-link"> Manage Schedule </a>
                     <a href="Landing_Page.html" class="text-link"> Landing Page </a>
-                    <div class="mb-3">
-                    <label for="languageSelect" class="form-label fw-bold" style="color: #5d575d;">Select Language:</label>
-                    <select class="form-select pink-border" id="languageSelect" onchange="location = this.value;">
-                        <option selected disabled>Options:</option>
-                            <option value="Contact Us En.html">English 🏴󠁧󠁢󠁥󠁮󠁧󠁿</option>
-                            <option value="Contact Us GR.html">Greek 🇬🇷</option>
-                    </select>
-                    </div>
+                    <a href="Contact Us GR.html" class="text-link"> Greek 🇬🇷 </a>
                 </a>
             </div>
         </nav>  
@@ -97,40 +91,37 @@
             const audio = document.getElementById("myAudio");
             const btn = document.getElementById("mute-toggle");
             window.addEventListener("load", () => {
-                const savedTime = sessionStorage.getItem('musicTime');
+                const savedTime = localStorage.getItem('musicTime');
                 if (savedTime) {
                     audio.currentTime = parseFloat(savedTime);
                 }
-                const wasPlaying = sessionStorage.getItem('musicPlaying'); 
-                if (wasPlaying === null) {
-                    btn.textContent = "🎵"; // <-- Put your unique first-time emoji here
-                } else if (wasPlaying === 'true') {
-                    btn.textContent = "⏸";
-                } else {
-                    btn.textContent = "▶";
-                }
             });
+            const wasPlaying = localStorage.getItem('musicPlaying');    
+            if (wasPlaying === 'true') {
+                btn.textContent = "⏸";
+            }    
             audio.ontimeupdate = function() {
-                sessionStorage.setItem('musicTime', audio.currentTime);
+            localStorage.setItem('musicTime', audio.currentTime);
             };
             btn.addEventListener("click", function() {
                 if (audio.paused) {
                     audio.play().then(() => {
                     audio.muted = false;
                     btn.textContent = "▶";
-                    sessionStorage.setItem('musicPlaying', 'true');
+                    localStorage.setItem('musicPlaying', 'true');
                 }).catch(error => {
                     console.log("Ο browser μπλόκαρε την αυτόματη εκκίνηση");
                 });
                 } else {
+                // Αν παίζει ήδη, κάνει εναλλαγή Mute/Unmute
                     if (audio.muted) {
                         audio.muted = false;
                         btn.textContent = "▶";
-                        sessionStorage.setItem('musicPlaying', 'true');
+                        localStorage.setItem('musicPlaying', 'true');
                     } else {
                         audio.muted = true;
                         btn.textContent = "⏸";
-                        sessionStorage.setItem('musicPlaying', 'false');
+                        localStorage.setItem('musicPlaying', 'false');
                     }
                 }
             });
@@ -149,9 +140,11 @@
                     <td><strong>Email:</strong> liza.kyriakidou@yahoo.gr </td>
                 </tr>
                 <tr>
-                    <td class="d-flex justify-content-between align-items-center">
-                        <a href="Log In En.html" class="text-link"> Log In </a>
-                        <a href="Sign Up En.html" class="text-link"> Sign Up </a>
+                    <td>
+                        <a class="navbar-brand fs-1 fw-bold d-flex align-items-center" href="#">
+                            <a href="Log In En.html" class="text-link"> Log In </a>
+                            <a href="Sign Up En.html" class="text-link"> Sign Up </a>
+                        </a>
                     </td>
                 </tr>
             </tbody>
