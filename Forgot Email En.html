@@ -110,7 +110,7 @@
                     btn.textContent = "▶";
                     localStorage.setItem('musicPlaying', 'true');
                 }).catch(error => {
-                    console.log("Ο browser μπλόκαρε την αυτόματη εκκίνηση");
+                    console.log("The browser blocked the automatic playback");
                 });
                 } else {
                 // Αν παίζει ήδη, κάνει εναλλαγή Mute/Unmute
@@ -137,7 +137,32 @@
                     <td> <input type="text" class="my-pink-input" placeholder=" Enter your email "> </td>
                 </tr>
                 <tr>
-                    <td> <button type="button" class="btn btn-primary"> Click to have a temporary code sent to your email. </button> </td>
+                    <td>
+                        <button type="button" id="mySpecialButton" class="btn btn-primary">Click to have a temporary code sent to your email. </button>
+                        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                                <div class="toast-header" style="background-color: #eeb2ba; color: white;">
+                                    <strong class="me-auto">Ballet Net Security</strong>
+                                    <small>Now</small>
+                                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                </div>
+                                <div class="toast-body">
+                                    📩  The code has been sent successfully to your email!
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                        const simpleBtn = document.getElementById("mySpecialButton");
+                        const toastElement = document.getElementById('liveToast');
+                        if (simpleBtn) {
+                            simpleBtn.addEventListener("click", function() {
+                            const toast = new bootstrap.Toast(toastElement);
+                            toast.show();
+                            console.log("The notification has been sent!");
+                            });
+                        }
+                    </script>
+                    </td>
                 </tr>
                 <tr>
                     <td class="d-flex justify-content-between align-items-center">
@@ -150,6 +175,7 @@
                 </tr>
             </tbody>
         </table>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
 

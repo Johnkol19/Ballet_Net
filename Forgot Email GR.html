@@ -137,7 +137,32 @@
                     <td> <input type="text" class="my-pink-input" placeholder=" Βάλετε το email σας "> </td>
                 </tr>
                 <tr>
-                    <td> <button type="button" class="btn btn-primary"> Πατήστε για να σταλεί ένας προσορινός κωδικός στο email σας </button> </td>
+                    <td> 
+                        <button type="button" id="mySpecialButton" class="btn btn-primary"> Πατήστε για να σταλεί ένας προσωρινός κωδικός στο email σας </button> 
+                        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                                <div class="toast-header" style="background-color: #eeb2ba; color: white;">
+                                    <strong class="me-auto">Ballet Net Security</strong>
+                                    <small>Τώρα</small>
+                                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                </div>
+                                <div class="toast-body">
+                                    📩  Ο κωδικός στάλθηκε επιτυχώς στο email σας!
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <script>
+                        const simpleBtn = document.getElementById("mySpecialButton");
+                        const toastElement = document.getElementById('liveToast');
+                        if (simpleBtn) {
+                            simpleBtn.addEventListener("click", function() {
+                            const toast = new bootstrap.Toast(toastElement);
+                            toast.show();
+                            console.log("Η ειδοποίηση στάλθηκε!");
+                            });
+                        }
+                    </script>
                 </tr>
                 <tr>
                     <td class="d-flex justify-content-between align-items-center">
@@ -150,6 +175,7 @@
                 </tr>
             </tbody>
         </table>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
 
