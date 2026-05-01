@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Αυτα ειναι για να τρεχει σε πολλες συσκευες -->
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="background_style.css">
+        <!--Τι θα γραφει η καρτελα εξω απο το παραθηρο -->
+        <title>
+            Landing Page  - Ballet Net
+        </title>
+        <!--Φωτογραφια για καρτελα(να δω γιατι δεν λειτουργει)-->
+        <link rel="icon" type="image/png" href="BalletArts.png">
+        <!-- Γενικες οδηγιες που τις γραφεις μια φορα και ισχυουν για ολο το αρχει (χωρισ να χριαζεται να τις γραφει ςπολλες φορες (πχ γι ακαθε πινακα ξεχωριστα τον θελω κοκκινο)) -->
+        <style>
+            #mute-toggle {
+             background: transparent;
+             border: none;        
+             font-size: 50px;          
+            cursor: pointer;        
+            padding: 0;             
+            outline: none;}
+            p {font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
+            h1 {font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
+            h2 {font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
+            table { border-collapse: collapse; width: 100%;}
+            th, td { background-color: lightgray;
+                     padding: 8px;
+                     text-align: left;
+                     border-bottom: 1px solid #DDD; }
+            tr:hover {background-color: #D6EEEE;}
+            body {
+                background-image: url('waves_purple.jpg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                margin: 0;
+                min-height: 100vh;
+                width: 100%;}
+            .my-table {
+                font-family: 'Lucida Sans', Verdana, sans-serif;
+                border-collapse: collapse;
+                width: 60%;
+                margin: 20px auto;
+                background-color: rgba(255, 255, 255, 0.8);}
+            .my-table th, .my-table td {
+                padding: 12px;
+                text-align: left;}
+            .my-table th {
+                color: white;}
+            .my-pink-input {
+                background-color: rgba(220, 143, 143, 0.8);
+                padding: 20px;
+                border-radius: 10px;
+                width: 95%;
+                margin: 20px auto;
+                box-shadow: 0 4px 8px rgba(224, 170, 170, 0.1);}
+            .text-link {
+                color: rgba(220, 143, 143, 0.8);
+                text-decoration: none; 
+                font-family: 'Lucida Sans', sans-serif;
+                font-weight: bold;
+                transition: color 0.3s;}
+            .text-link:hover {
+                color: #5d575d;          
+                text-decoration: underline;}
+            .pink-border:focus {
+                border-color: #eeb2ba;
+                box-shadow: 0 0 0 0.25rem rgba(238, 178, 186, 0.25);}
+                /* ΑΛΛΑΓΗ: Κεντρικό κουτί του landing page */
+.landing-container {
+    width: 70%;
+    margin: 70px auto;
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 4px 8px rgba(224, 170, 170, 0.1);
+}
+
+/* ΑΛΛΑΓΗ: Πάνω ροζ τίτλος */
+.landing-header {
+    background-color: rgba(220, 143, 143, 0.8);
+    color: white;
+    text-align: center;
+    padding: 18px;
+    font-weight: bold;
+}
+
+/* ΑΛΛΑΓΗ: Κεντρικό γκρι περιεχόμενο */
+.landing-content {
+    background-color: lightgray;
+    padding: 40px;
+    text-align: center;
+}
+
+/* ΑΛΛΑΓΗ: Motto */
+.motto {
+    color: #5d575d;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* ΑΛΛΑΓΗ: Ροζ κουτιά πληροφοριών */
+.section-box {
+    background-color: rgba(220, 143, 143, 0.8);
+    padding: 25px;
+    border-radius: 10px;
+    margin: 20px auto;
+    text-align: left;
+    color: #5d575d;
+    box-shadow: 0 4px 8px rgba(224, 170, 170, 0.1);
+}
+
+.section-box h3 {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.section-box p {
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+/* ΑΛΛΑΓΗ: Περιοχή κουμπιών */
+.button-area {
+    margin-top: 30px;
+}
+
+/* ΑΛΛΑΓΗ: Κουμπί Sign up */
+.signup-button {
+    background-color: #0d6efd;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 18px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.signup-button:hover {
+    background-color: #0b5ed7;
+    color: white;
+}
+
+/* ΑΛΛΑΓΗ: Link Already have an account */
+.account-link {
+    color: rgba(220, 143, 143, 0.8);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.account-link:hover {
+    color: #5d575d;
+    text-decoration: underline;
+}
+        </style>
+    </head>
+
+    <body>
+        <!-- Αυτο ειναι το banner που θα εμφανιζεται πανω σε ολες τις σελιδες -->
+        <nav class="navbar navbar-light bg-light mb-4 shadow-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand fs-1 fw-bold d-flex align-items-center" href="#">
+                    <img src="BalletArts.png" alt="Ballet Arts Logo" height="50" class="me-3">                    Ballet Net
+                    <a href="Approve_Content.html" class="text-link"> Approve Content </a>
+                    <a href="Manage_Schedule.html" class="text-link"> Manage Schedule </a>
+                    <a href="Landing_Page.html" class="text-link"> Landing Page </a>
+                </a>
+            </div>
+        </nav>  
+        <!-- Αυτο ειναι το κουμπι για να ανοιγει και να κλεινει η μουσικη που θα παιζει στο background σε ολες τις σελιδες (Αμα το κρατησουμε τελικα!) -->
+        <audio id="myAudio" loop>
+            <source src="Abba - Money, Money, Money (Official Music Video).mp3" type="audio/mpeg">
+        </audio>
+        <button id="mute-toggle" class="blue-play-btn">🔇</button>
+        <!-- ΑΛΛΑΓΗ: Εδώ ξεκινά το περιεχόμενο του Landing Page -->
+<main class="landing-container">
+
+    <div class="landing-header">
+        <h1 data-el="Καλώς ήρθατε στο Ballet Net" data-en="Welcome to Ballet Net">
+            Καλώς ήρθατε στο Ballet Net
+        </h1>
+    </div>
+
+    <div class="landing-content">
+
+        <h2 class="motto" 
+            data-el="Χορεύουμε με πειθαρχία, έκφραση και αγάπη για την τέχνη."
+            data-en="We dance with discipline, expression and love for the art.">
+            Χορεύουμε με πειθαρχία, έκφραση και αγάπη για την τέχνη.
+        </h2>
+
+        <div class="section-box">
+            <h3 data-el="Τα πιστεύω μας" data-en="Our Beliefs">
+                Τα πιστεύω μας
+            </h3>
+
+            <p data-el="Πιστεύουμε ότι ο χορός καλλιεργεί το σώμα, το μυαλό και την ψυχή. Μέσα από τη σωστή καθοδήγηση, κάθε μαθητής μπορεί να αναπτυχθεί με σεβασμό, αυτοπεποίθηση και δημιουργικότητα."
+               data-en="We believe that dance develops the body, mind and spirit. Through thoughtful guidance, every student can grow with respect, confidence and creativity.">
+               Πιστεύουμε ότι ο χορός καλλιεργεί το σώμα, το μυαλό και την ψυχή. Μέσα από τη σωστή καθοδήγηση, κάθε μαθητής μπορεί να αναπτυχθεί με σεβασμό, αυτοπεποίθηση και δημιουργικότητα.
+            </p>
+        </div>
+
+        <div class="section-box">
+            <h3 data-el="Το όραμά μας" data-en="Our Vision">
+                Το όραμά μας
+            </h3>
+
+            <p data-el="Το όραμά μας είναι να δημιουργούμε ένα ασφαλές, οργανωμένο και εμπνευσμένο περιβάλλον όπου οι μαθητές εξελίσσονται όχι μόνο ως χορευτές, αλλά και ως άνθρωποι."
+               data-en="Our vision is to create a safe, organised and inspiring environment where students grow not only as dancers, but also as individuals.">
+               Το όραμά μας είναι να δημιουργούμε ένα ασφαλές, οργανωμένο και εμπνευσμένο περιβάλλον όπου οι μαθητές εξελίσσονται όχι μόνο ως χορευτές, αλλά και ως άνθρωποι.
+            </p>
+        </div>
+
+        <div class="section-box">
+            <h3 data-el="Η εφαρμογή μας" data-en="Our Application">
+                Η εφαρμογή μας
+            </h3>
+
+            <p data-el="Το Ballet Net αποτελεί την ψηφιακή πύλη της σχολής χορού. Μέσα από την εφαρμογή, οι χρήστες μπορούν να ενημερώνονται, να συνδέονται με τη σχολή και να έχουν πρόσβαση στις βασικές λειτουργίες του συστήματος."
+               data-en="Ballet Net is the digital gateway of the dance school. Through the application, users can stay informed, connect with the school and access the main system functions.">
+               Το Ballet Net αποτελεί την ψηφιακή πύλη της σχολής χορού. Μέσα από την εφαρμογή, οι χρήστες μπορούν να ενημερώνονται, να συνδέονται με τη σχολή και να έχουν πρόσβαση στις βασικές λειτουργίες του συστήματος.
+            </p>
+        </div>
+
+        <div class="button-area">
+            <a href="Sign Up En.html" class="signup-button" 
+               data-el="Εγγραφή" 
+               data-en="Sign up">
+               Εγγραφή
+            </a>
+
+            <br>
+
+            <a href="Login_Page.html" class="account-link"
+               data-el="Έχετε ήδη λογαριασμό;"
+               data-en="Already have an account?">
+               Έχετε ήδη λογαριασμό;
+            </a>
+        </div>
+
+    </div>
+</main>
+<!-- ΑΛΛΑΓΗ: Εδώ τελειώνει το περιεχόμενο του Landing Page -->
+        <!-- Πως και ποτε να λυτουργει η μουσικη και το κουμπι της -->
+        <script>
+            const audio = document.getElementById("myAudio");
+            const btn = document.getElementById("mute-toggle");
+            window.addEventListener("load", () => {
+                const savedTime = localStorage.getItem('musicTime');
+                if (savedTime) {
+                    audio.currentTime = parseFloat(savedTime);
+                }
+            });
+            const wasPlaying = localStorage.getItem('musicPlaying');    
+            if (wasPlaying === 'true') {
+                btn.textContent = "⏸";
+            }    
+            audio.ontimeupdate = function() {
+            localStorage.setItem('musicTime', audio.currentTime);
+            };
+            btn.addEventListener("click", function() {
+                if (audio.paused) {
+                    audio.play().then(() => {
+                    audio.muted = false;
+                    btn.textContent = "▶";
+                    localStorage.setItem('musicPlaying', 'true');
+                }).catch(error => {
+                    console.log("Ο browser μπλόκαρε την αυτόματη εκκίνηση");
+                });
+                } else {
+                <!-- Αν παίζει ήδη, κάνει εναλλαγή Mute/Unmute -->
+                    if (audio.muted) {
+                        audio.muted = false;
+                        btn.textContent = "▶";
+                        localStorage.setItem('musicPlaying', 'true');
+                    } else {
+                        audio.muted = true;
+                        btn.textContent = "⏸";
+                        localStorage.setItem('musicPlaying', 'false');
+                    }
+                }
+            });
+        </script>
+        <!-- αυτο ειναι για να ξερει να ακολουθησει το προγραμμα τις οδηγιες μιας βιβλιοθηκης (που λεγετε bootstrap) -->
+         <!-- ΑΛΛΑΓΗ: Αυτόματη αλλαγή γλώσσας ανάλογα με τη γλώσσα του browser -->
+<script>
+    const language = navigator.language || navigator.userLanguage;
+    const selectedLanguage = language.startsWith("el") ? "el" : "en";
+
+    document.querySelectorAll("[data-el]").forEach(element => {
+        element.textContent = element.getAttribute("data-" + selectedLanguage);
+    });
+</script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
+
