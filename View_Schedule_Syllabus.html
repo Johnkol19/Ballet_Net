@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Schedule & Syllabus - Ballet Net</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="background_style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4 shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fs-1 fw-bold d-flex align-items-center" href="Landing_Page.html">
+                <img src="photos/BalletArts.png" alt="Ballet Arts Logo" height="80" class="me-3">
+                Ballet Net
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto fs-5">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Landing_Page.html">Landing Page</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Manage_Schedule.html">Manage Schedule</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Approve_Content.html">Approve Content</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active fw-bold text-primary" aria-current="page"
+                            href="View_Schedule_Syllabus.html">Schedule & Syllabus</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4 mb-5">
+
+        <!-- Εναλλακτική Ροή 4.1: Μήνυμα για μη εγγεγραμμένο μαθητή -->
+        <!-- Σημείωση: Το style="display: block;" μπορεί να γίνει "none" μέσω JavaScript αν ο μαθητής είναι εγγεγραμμένος -->
+        <div class="alert alert-warning alert-dismissible fade show shadow-sm" role="alert" id="unregisteredAlert">
+            <strong>Προσοχή!</strong> Αν δεν έχετε εγγραφεί επισήμως σε κάποιο τμήμα για το τρέχον έτος, παρακαλούμε
+            επικοινωνήστε με τη <strong>Γραμματεία</strong>.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="fw-bold"
+                style="color: #333; background-color: rgba(255,255,255,0.8); padding: 10px; border-radius: 8px;">
+                Εκπαιδευτικός Φάκελος: Πρόγραμμα & Πρόοδος</h2>
+        </div>
+
+        <div class="row g-4">
+            <!-- Βασική Ροή 3.2: Εβδομαδιαίο ωρολόγιο πρόγραμμα -->
+            <div class="col-lg-7">
+                <div class="card shadow border-0 h-100">
+                    <div class="card-header bg-primary text-white fw-bold fs-5">
+                        Το Ωρολόγιο Πρόγραμμά μου
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Ημέρα</th>
+                                        <th>Ώρα</th>
+                                        <th>Αίθουσα</th>
+                                        <th>Δασκάλα</th>
+                                        <th>Μάθημα & Επίπεδο</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="fw-bold">Δευτέρα</td>
+                                        <td>19:00 - 20:30</td>
+                                        <td>Αίθουσα 1</td>
+                                        <td>Μαρία Παππά</td>
+                                        <td>Ballet (Intermediate Foundation)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Τετάρτη</td>
+                                        <td>19:00 - 20:30</td>
+                                        <td>Αίθουσα 1</td>
+                                        <td>Μαρία Παππά</td>
+                                        <td>Ballet (Advanced Foundation)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Πέμπτη</td>
+                                        <td>20:30 - 21:30</td>
+                                        <td>Αίθουσα 2</td>
+                                        <td>Ελένη Γεωργίου</td>
+                                        <td>Ballet (Intermediate Foundation)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Βασική Ροή 3.3: Διδακτέα ύλη (RAD/ISTD) και ποσοστό ολοκλήρωσης -->
+            <div class="col-lg-5">
+                <div class="card shadow border-0 h-100">
+                    <div class="card-header bg-success text-white fw-bold fs-5">
+                        Πρόοδος Ύλης (RAD / ISTD)
+                    </div>
+                    <div class="card-body">
+
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="fw-bold">Συνολικό Ποσοστό Ολοκλήρωσης</span>
+                                <span class="fw-bold text-success">45%</span>
+                            </div>
+                            <div class="progress" style="height: 20px;">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 45%;"
+                                    aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                            </div>
+                        </div>
+
+                        <p class="text-muted small mb-3">Αναλυτική εξέλιξη στη διδακτέα ύλη του τρέχοντος επιπέδου (RAD
+                            Intermediate Foundation):</p>
+
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                Barre Work: Plié, Tendu & Glissades
+                                <span class="badge bg-success rounded-pill shadow-sm">Ολοκληρώθηκε (100%)</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                Center Work: Port de Bras & Adagio
+                                <span class="badge bg-info text-dark rounded-pill shadow-sm">Σε Εξέλιξη (60%)</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                Allegro: Petit Allegro & Grand Allegro
+                                <span class="badge bg-warning text-dark rounded-pill shadow-sm">Αρχικό Στάδιο
+                                    (20%)</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                Pointe Work: Relevé & Échappé
+                                <span class="badge bg-secondary rounded-pill shadow-sm">Εκκρεμεί (0%)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
