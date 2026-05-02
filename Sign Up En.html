@@ -87,7 +87,7 @@
         <table class="my-table">
         <thead >
             <tr>
-            <th style="background-color:  rgba(220, 143, 143, 0.8); text-align: center;"> Sign Up</th>
+            <th style="background-color:  rgba(220, 143, 143, 0.8); text-align: center;"> Sign Up </th>
             </tr>
         </thead>
             <tbody>
@@ -95,13 +95,14 @@
                     <td> <input type="text" class="my-pink-input" placeholder=" Username"> </td>
                 </tr>
                 <tr>
-                    <td> <input type="password" class="my-pink-input" placeholder=" Password"> </td>
+                    <td> <input type="password" id="passwordMain" class="my-pink-input" placeholder="Password"></td>
                 </tr>
                 <tr>
-                    <td> <input type="password" class="my-pink-input" placeholder=" Password Again"> </td>
+                    <td> <input type="password" id="passwordConfirm" class="my-pink-input" placeholder="Confirm Password"></td>
                 </tr>
                 <tr>
                     <td class="d-flex justify-content-between align-items-center">
+                        <button type="button" id="submitBtn" class="my-button"> Sign Up </button>
                         <a class="navbar-brand fs-1 fw-bold d-flex align-items-center" href="#">
                             <a href="Log In En.html" class="text-link"> Log In </a>
                             <a href="Contact Us En.html" class="text-link"> Contact Us </a>
@@ -111,6 +112,38 @@
                 </tr>
             </tbody>
         </table>
+            <div class="modal fade" id="passwordErrorModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color: #eeb2ba; color: white;">
+                            <h5 class="modal-title"><strong>Ballet Net Security</strong></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ❌ The passwords you entered do not match. Please try again.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <script>
+            const pass1 = document.getElementById("passwordMain");
+            const pass2 = document.getElementById("passwordConfirm");
+            const submitBtn = document.getElementById("submitBtn");
+            const errorModalElement = document.getElementById("passwordErrorModal");
+            if (submitBtn) {
+                submitBtn.addEventListener("click", function() {
+                    if (pass1.value !== pass2.value) {
+                        const errorModal = new bootstrap.Modal(errorModalElement);
+                        errorModal.show();
+                        pass2.value = ""; 
+                    } else if (pass1.value === "" || pass2.value === "") {
+                        alert("Please fill in both password fields!");
+                    } else {
+                        console.log("Passwords match! You can proceed to the next step.");
+                   }
+                });
+            }
+        </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
