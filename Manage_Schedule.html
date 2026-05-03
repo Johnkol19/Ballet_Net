@@ -1,311 +1,389 @@
 <!DOCTYPE html>
+<html lang="el">
+<head>
+    <title>Manage Schedule - Ballet Net</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="icon" type="image/png" href="photos/BalletArts.png">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="background_style.css">
+</head>
+<body>
 
-<html>
-    <head>
-        <title> Manage Schedule - Ballet Net</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="background_style.css">
-    </head>
-
-    <body>
-        <nav class="navbar navbar-light bg-light mb-4 shadow-sm">
-            <div class="container-fluid">
-              <a class="navbar-brand fs-1 fw-bold d-flex align-items-center" href="#">
-                <img src="../photos/Logo.png" alt="Ballet Arts Logo" height="100" class="me-3">
+    <nav class="navbar navbar-light bg-light mb-4 shadow-sm py-2">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <a class="navbar-brand fs-2 fw-bold d-flex align-items-center text-ballet" href="Landing_Page.html">
+                <img src="photos/BalletArts.png" alt="Ballet Arts Logo" height="80" class="me-3">
                 Ballet Net
-              </a>
+            </a>
+                
+            <div class="d-flex gap-4">
+                <a href="Approve_Content.html" class="text-link"> Approve Content </a>
+                <a href="Manage_Schedule.html" class="text-link text-ballet" style="font-weight: 700; border-bottom: 2px solid #8B5A83;"> Manage Schedule </a>
+                <a href="Landing_Page.html" class="text-link"> Landing Page </a>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        <div class="container">
-          <ul class="nav nav-tabs" id="scheduleTabs" role="tablist">
-            <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="room1-tab" data-bs-toggle="tab" data-bs-target="#room1" type="button" role="tab">Αίθουσα 1</button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="room2-tab" data-bs-toggle="tab" data-bs-target="#room2" type="button" role="tab">Αίθουσα 2</button>
-            </li>
-          </ul>
-          
-          <div class="tab-content" id="scheduleTabsContent">
-            
-            <!-- Αιθουσα 1-->
-            <div class="tab-pane fade show active p-0 border border-top-0 bg-white" id="room1" role="tabpanel">
-              <div class="table-responsive">
-                <table class="table table-hover align-middle mb-0">
-                  <thead class="table-dark">
-                    <tr>
-                      <th>Ώρα</th>
-                      <th>Μάθημα</th>
-                      <th>Τμήμα / Επίπεδο</th>
-                      <th class="text-end">Ενέργειες</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="table-light"><td colspan="4" class="fw-bold text-primary">ΔΕΥΤΕΡΑ</td></tr>
-                    <tr><td>17:30 - 18:15</td><td>Ballet</td><td>Pre-Primary</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-
-                    <tr><td>18:15 - 19:00</td><td>Ballet</td><td>Primary</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-
-                    <tr><td>19:00 - 20:30</td><td>Ballet</td><td>Intermediate Foundation</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-                    <tr><td>20:30 - 22:00</td><td>Ballet</td><td>Adult</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-
-                    <tr class="table-light"><td colspan="4" class="fw-bold text-primary">ΤΡΙΤΗ</td></tr>
-                    <tr><td>17:00 - 18:00</td><td>Ballet</td><td>Grade 3</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-                    <tr><td>18:00 - 19:00</td><td>Musical</td><td>Kids</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-                    <tr><td>19:00 - 20:00</td><td>Contemporary</td><td>Level 1</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-                    <tr><td>20:00 - 21:30</td><td>Ballet</td><td>Intermediate Foundation</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-
-                    <tr class="table-light"><td colspan="4" class="fw-bold text-primary">ΤΕΤΑΡΤΗ</td></tr>
-                    <tr><td>17:30 - 18:15</td><td>Ballet</td><td>Pre-Primary</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-                    <tr><td>18:15 - 19:00</td><td>Ballet</td><td>Grade 1</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    <tr><td>19:00 - 20:30</td><td>Ballet</td><td>Advanced Foundation</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-                    <tr><td>20:30 - 22:00</td><td>Ballet</td><td>Advanced</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-
-                    <tr class="table-light"><td colspan="4" class="fw-bold text-primary">ΠΕΜΠΤΗ</td></tr>
-                    <tr><td>17:00 - 18:00</td><td>Ballet</td><td>Grade 3</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-                    <tr><td>18:00 - 19:00</td><td>Modern</td><td>Grade 3</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-                    <tr><td>19:00 - 20:30</td><td>Modern</td><td>Grade 5</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-                    <tr><td>20:30 - 21:30</td><td>Ballet</td><td>Intermediate Foundation</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-
-                    <tr class="table-light"><td colspan="4" class="fw-bold text-primary">ΠΑΡΑΣΚΕΥΗ</td></tr>
-                    <tr><td>17:00 - 18:00</td><td>Ballet</td><td>Grade 2</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-                    <tr><td>18:00 - 19:00</td><td>Modern</td><td>Grade 2</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-                    <tr><td>19:00 - 20:00</td><td>Musical</td><td>Advanced</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-                    <tr><td>20:00 - 21:30</td><td>Contemporary</td><td>Level 2</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-
-                    <tr class="table-light"><td colspan="4" class="fw-bold text-primary">ΣΑΒΒΑΤΟ</td></tr>
-                    <tr><td>10:00 - 11:30</td><td>Ballet</td><td>Intermediate Foundation</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
-                    <tr><td>11:30 - 13:00</td><td>Ballet</td><td>Advanced Foundation</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
-                    <tr><td>13:00 - 14:30</td><td>Ballet</td><td>Advanced</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
-                    <tr><td>17:00 - 18:00</td><td>Street Dance</td><td>Level 2</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
-                    <tr><td>18:00 - 19:00</td><td>Street Dance</td><td>Level 1</td><td class="text-end"><button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button></td></tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            
-            <!-- Αιθουσα 2-->
-            <div class="tab-pane fade p-0 border border-top-0 bg-white" id="room2" role="tabpanel">
-              <div class="table-responsive">
-                <table class="table table-hover align-middle mb-0">
-                  <thead class="table-dark">
-                    <tr>
-                      <th>Ώρα</th>
-                      <th>Μάθημα</th>
-                      <th>Τμήμα / Επίπεδο</th>
-                      <th class="text-end">Ενέργειες</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="table-light"><td colspan="4" class="fw-bold text-primary">ΔΕΥΤΕΡΑ</td></tr>
-                    <tr><td>17:15 - 18:00</td><td>Ballet</td><td>Pre - School</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-                    <tr><td>18:00 - 19:30</td><td>Ballet</td><td>Intermediate</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-                    <tr><td>20:00 - 21:00</td><td>Free</td><td>Choreography</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-
-                    <tr class="table-light"><td colspan="4" class="fw-bold text-primary">ΤΡΙΤΗ</td></tr>
-                    <tr><td>17:00 - 18:00</td><td>Ballet</td><td>Grade 2</td><td class="text-end">
-                      <button class="btn btn-sm btn-outline-secondary">Επεξεργασία</button>
-                    </td></tr>
-                    <tr><td>18:00 - 18:45</td><td>Ballet</td><td>Pre - School</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-
-                    <tr class="table-light"><td colspan="4" class="fw-bold text-primary">ΤΕΤΑΡΤΗ</td></tr>
-                    <tr><td>16:45 - 17:30</td><td>Ballet</td><td>Pre - School</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-                    <tr><td>17:30 - 19:00</td><td>Ballet</td><td>Intermediate</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-                    <tr><td>20:30 - 22:00</td><td>Ballet</td><td>Adult</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-
-                    <tr class="table-light"><td colspan="4" class="fw-bold text-primary">ΠΕΜΠΤΗ</td></tr>
-                    <tr><td>17:15 - 18:00</td><td>Modern</td><td>Grade 1</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-                    <tr><td>18:00 - 18:45</td><td>Ballet</td><td>Primary</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-                    <tr><td>21:00 - 22:00</td><td>Musical</td><td>Adult</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-
-                    <tr class="table-light"><td colspan="4" class="fw-bold text-primary">ΠΑΡΑΣΚΕΥΗ</td></tr>
-                    <tr><td>17:00 - 18:00</td><td>Ballet</td><td>Grade 1</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-                    <tr><td>18:00 - 18:45</td><td>Ballet</td><td>Pre - School</td><td class="text-end">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Επεξεργασία
-                      </button>
-                    </td></tr>
-
-                    <tr class="table-light"><td colspan="4" class="fw-bold text-primary">ΣΑΒΒΑΤΟ</td></tr>
-                    <tr><td colspan="4" class="text-muted text-center py-3">Δεν υπάρχουν προγραμματισμένα μαθήματα</td></tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          
-          </div>
+    <!-- Απλωμένο Layout -->
+    <div class="container-fluid px-4 px-lg-5 mt-4 mb-5">
+        
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <h1 class="fw-bold d-flex align-items-center mb-0 text-ballet" style="font-size: 2.5rem;">
+                <img src="photos/schedule.png" alt="Schedule" height="42" class="me-3 rounded">
+                Διαχείριση Προγράμματος
+            </h1>
         </div>
 
-        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
+        <!-- Custom Tabs -->
+        <ul class="nav nav-tabs custom-tabs mb-4 border-bottom-0" id="scheduleTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="room1-tab" data-bs-toggle="tab" data-bs-target="#room1" type="button" role="tab">Αίθουσα 1</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="room2-tab" data-bs-toggle="tab" data-bs-target="#room2" type="button" role="tab">Αίθουσα 2</button>
+            </li>
+        </ul>
+          
+        <div class="tab-content" id="scheduleTabsContent">
+            
+            <!-- Αίθουσα 1 -->
+            <div class="tab-pane fade show active p-0" id="room1" role="tabpanel">
+                <!-- Πίνακας σε Κάρτα -->
+                <div class="card shadow-sm border-0" style="border-radius: 16px; overflow: hidden;">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0 fs-5">
+                            <thead class="bg-ballet text-white">
+                                <tr>
+                                    <th class="py-3 px-4 font-weight-normal border-0">Ώρα</th>
+                                    <th class="py-3 font-weight-normal border-0">Μάθημα</th>
+                                    <th class="py-3 font-weight-normal border-0">Τμήμα / Επίπεδο</th>
+                                    <th class="py-3 px-4 text-end font-weight-normal border-0">Ενέργειες</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="table-light"><td colspan="4" class="fw-bold text-ballet px-4 py-3 bg-light">ΔΕΥΤΕΡΑ</td></tr>
+                                <tr>
+                                    <td class="px-4 py-3">17:30 - 18:15</td><td class="py-3">Ballet</td><td class="py-3">Pre-Primary</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">18:15 - 19:00</td><td class="py-3">Ballet</td><td class="py-3">Primary</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">19:00 - 20:30</td><td class="py-3">Ballet</td><td class="py-3">Intermediate Foundation</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">20:30 - 22:00</td><td class="py-3">Ballet</td><td class="py-3">Adult</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+
+                                <tr class="table-light"><td colspan="4" class="fw-bold text-ballet px-4 py-3 bg-light">ΤΡΙΤΗ</td></tr>
+                                <tr>
+                                    <td class="px-4 py-3">17:00 - 18:00</td><td class="py-3">Ballet</td><td class="py-3">Grade 3</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">18:00 - 19:00</td><td class="py-3">Musical</td><td class="py-3">Kids</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">19:00 - 20:00</td><td class="py-3">Contemporary</td><td class="py-3">Level 1</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">20:00 - 21:30</td><td class="py-3">Ballet</td><td class="py-3">Intermediate Foundation</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+
+                                <tr class="table-light"><td colspan="4" class="fw-bold text-ballet px-4 py-3 bg-light">ΤΕΤΑΡΤΗ</td></tr>
+                                <tr>
+                                    <td class="px-4 py-3">17:30 - 18:15</td><td class="py-3">Ballet</td><td class="py-3">Pre-Primary</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">18:15 - 19:00</td><td class="py-3">Ballet</td><td class="py-3">Grade 1</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">19:00 - 20:30</td><td class="py-3">Ballet</td><td class="py-3">Advanced Foundation</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">20:30 - 22:00</td><td class="py-3">Ballet</td><td class="py-3">Advanced</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+
+                                <tr class="table-light"><td colspan="4" class="fw-bold text-ballet px-4 py-3 bg-light">ΠΕΜΠΤΗ</td></tr>
+                                <tr>
+                                    <td class="px-4 py-3">17:00 - 18:00</td><td class="py-3">Ballet</td><td class="py-3">Grade 3</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">18:00 - 19:00</td><td class="py-3">Modern</td><td class="py-3">Grade 3</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">19:00 - 20:30</td><td class="py-3">Modern</td><td class="py-3">Grade 5</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">20:30 - 21:30</td><td class="py-3">Ballet</td><td class="py-3">Intermediate Foundation</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+
+                                <tr class="table-light"><td colspan="4" class="fw-bold text-ballet px-4 py-3 bg-light">ΠΑΡΑΣΚΕΥΗ</td></tr>
+                                <tr>
+                                    <td class="px-4 py-3">17:00 - 18:00</td><td class="py-3">Ballet</td><td class="py-3">Grade 2</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">18:00 - 19:00</td><td class="py-3">Modern</td><td class="py-3">Grade 2</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">19:00 - 20:00</td><td class="py-3">Musical</td><td class="py-3">Advanced</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">20:00 - 21:30</td><td class="py-3">Contemporary</td><td class="py-3">Level 2</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+
+                                <tr class="table-light"><td colspan="4" class="fw-bold text-ballet px-4 py-3 bg-light">ΣΑΒΒΑΤΟ</td></tr>
+                                <tr>
+                                    <td class="px-4 py-3">10:00 - 11:30</td><td class="py-3">Ballet</td><td class="py-3">Intermediate Foundation</td>
+                                    <td class="text-end px-4 py-3"><button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">11:30 - 13:00</td><td class="py-3">Ballet</td><td class="py-3">Advanced Foundation</td>
+                                    <td class="text-end px-4 py-3"><button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">13:00 - 14:30</td><td class="py-3">Ballet</td><td class="py-3">Advanced</td>
+                                    <td class="text-end px-4 py-3"><button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">17:00 - 18:00</td><td class="py-3">Street Dance</td><td class="py-3">Level 2</td>
+                                    <td class="text-end px-4 py-3"><button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">18:00 - 19:00</td><td class="py-3">Street Dance</td><td class="py-3">Level 1</td>
+                                    <td class="text-end px-4 py-3"><button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Αίθουσα 2 -->
+            <div class="tab-pane fade p-0" id="room2" role="tabpanel">
+                <div class="card shadow-sm border-0" style="border-radius: 16px; overflow: hidden;">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0 fs-5">
+                            <thead class="bg-ballet text-white">
+                                <tr>
+                                    <th class="py-3 px-4 font-weight-normal border-0">Ώρα</th>
+                                    <th class="py-3 font-weight-normal border-0">Μάθημα</th>
+                                    <th class="py-3 font-weight-normal border-0">Τμήμα / Επίπεδο</th>
+                                    <th class="py-3 px-4 text-end font-weight-normal border-0">Ενέργειες</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="table-light"><td colspan="4" class="fw-bold text-ballet px-4 py-3 bg-light">ΔΕΥΤΕΡΑ</td></tr>
+                                <tr>
+                                    <td class="px-4 py-3">17:15 - 18:00</td><td class="py-3">Ballet</td><td class="py-3">Pre - School</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">18:00 - 19:30</td><td class="py-3">Ballet</td><td class="py-3">Intermediate</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">20:00 - 21:00</td><td class="py-3">Free</td><td class="py-3">Choreography</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+
+                                <tr class="table-light"><td colspan="4" class="fw-bold text-ballet px-4 py-3 bg-light">ΤΡΙΤΗ</td></tr>
+                                <tr>
+                                    <td class="px-4 py-3">17:00 - 18:00</td><td class="py-3">Ballet</td><td class="py-3">Grade 2</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">18:00 - 18:45</td><td class="py-3">Ballet</td><td class="py-3">Pre - School</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+
+                                <tr class="table-light"><td colspan="4" class="fw-bold text-ballet px-4 py-3 bg-light">ΤΕΤΑΡΤΗ</td></tr>
+                                <tr>
+                                    <td class="px-4 py-3">16:45 - 17:30</td><td class="py-3">Ballet</td><td class="py-3">Pre - School</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">17:30 - 19:00</td><td class="py-3">Ballet</td><td class="py-3">Intermediate</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">20:30 - 22:00</td><td class="py-3">Ballet</td><td class="py-3">Adult</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+
+                                <tr class="table-light"><td colspan="4" class="fw-bold text-ballet px-4 py-3 bg-light">ΠΕΜΠΤΗ</td></tr>
+                                <tr>
+                                    <td class="px-4 py-3">17:15 - 18:00</td><td class="py-3">Modern</td><td class="py-3">Grade 1</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">18:00 - 18:45</td><td class="py-3">Ballet</td><td class="py-3">Primary</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">21:00 - 22:00</td><td class="py-3">Musical</td><td class="py-3">Adult</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+
+                                <tr class="table-light"><td colspan="4" class="fw-bold text-ballet px-4 py-3 bg-light">ΠΑΡΑΣΚΕΥΗ</td></tr>
+                                <tr>
+                                    <td class="px-4 py-3">17:00 - 18:00</td><td class="py-3">Ballet</td><td class="py-3">Grade 1</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3">18:00 - 18:45</td><td class="py-3">Ballet</td><td class="py-3">Pre - School</td>
+                                    <td class="text-end px-4 py-3">
+                                        <button type="button" class="btn btn-sm btn-outline-ballet rounded-pill fw-bold px-3 py-2" data-bs-toggle="modal" data-bs-target="#editModal">Επεξεργασία</button>
+                                    </td>
+                                </tr>
+
+                                <tr class="table-light"><td colspan="4" class="fw-bold text-ballet px-4 py-3 bg-light">ΣΑΒΒΑΤΟ</td></tr>
+                                <tr><td colspan="4" class="text-muted text-center py-4">Δεν υπάρχουν προγραμματισμένα μαθήματα</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+    </div>
+
+    <!-- Modal Επεξεργασίας -->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content shadow-lg border-0" style="border-radius: 16px; overflow: hidden;">
               
-              <div class="modal-header bg-light">
-                <h5 class="modal-title" id="editModalLabel">Επεξεργασία Μαθήματος</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Κλείσιμο"></button>
-              </div>
+                <div class="modal-header text-white bg-ballet border-0 p-4">
+                    <h4 class="modal-title fw-bold" id="editModalLabel">Επεξεργασία Μαθήματος</h4>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Κλείσιμο"></button>
+                </div>
               
-              <div class="modal-body">
-                <form>
-                  <div class="mb-3">
-                    <label class="form-label text-muted small fw-bold">ΩΡΑ</label>
-                    <input type="text" class="form-control" value="17:30 - 18:15">
-                  </div>
-                  
-                  <div class="mb-3">
-                    <label class="form-label text-muted small fw-bold">ΜΑΘΗΜΑ</label>
-                    <select class="form-select">
-                      <option selected>Ballet</option>
-                      <option>Contemporary</option>
-                      <option>Musical</option>
-                      <option>Modern</option>
-                      <option>Street Dance</option>
-                    </select>
-                  </div>
-                  
-                  <div class="mb-3">
-                    <label class="form-label text-muted small fw-bold">ΤΜΗΜΑ / ΕΠΙΠΕΔΟ</label>
-                    <input type="text" class="form-control" value="Pre-Primary">
-                  </div>
-                </form>
-              </div>
+                <div class="modal-body p-5">
+                    <form>
+                        <div class="mb-4">
+                            <label class="form-label text-secondary small text-uppercase fw-bold fs-6">ΩΡΑ</label>
+                            <input type="text" class="form-control border-2 rounded-3 fs-5 p-3" value="17:30 - 18:15">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="form-label text-secondary small text-uppercase fw-bold fs-6">ΜΑΘΗΜΑ</label>
+                            <select class="form-select border-2 rounded-3 fs-5 p-3">
+                                <option selected>Ballet</option>
+                                <option>Contemporary</option>
+                                <option>Musical</option>
+                                <option>Modern</option>
+                                <option>Street Dance</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="form-label text-secondary small text-uppercase fw-bold fs-6">ΤΜΗΜΑ / ΕΠΙΠΕΔΟ</label>
+                            <input type="text" class="form-control border-2 rounded-3 fs-5 p-3" value="Pre-Primary">
+                        </div>
+                    </form>
+                </div>
               
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ακύρωση</button>
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Αποθήκευση Αλλαγών</button>
-              </div>
+                <div class="modal-footer bg-light border-0 p-4">
+                    <button type="button" class="btn btn-secondary btn-lg px-4 rounded-pill" data-bs-dismiss="modal">Ακύρωση</button>
+                    <button type="button" class="btn btn-ballet btn-lg px-5 fw-bold shadow-sm rounded-pill" data-bs-dismiss="modal">Αποθήκευση Αλλαγών</button>
+                </div>
               
             </div>
-          </div>
         </div>
+    </div>
 
-        <!--συνδέσει το αρχείο JS της Bootstrap-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
+    <!-- Script Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
