@@ -105,10 +105,10 @@
         </thead>
             <tbody>
                 <tr>
-                    <td> <input type="text" class="my-pink-input" placeholder=" Username "> </td>
+                    <td> <input type="text" id="username" class="my-pink-input" placeholder=" Username"> </td>
                 </tr>
                 <tr>
-                    <td> <input type="password" class="my-pink-input" placeholder=" Password "> </td>
+                    <td> <input type="password" id="password" class="my-pink-input" placeholder="Password"></td>
                 </tr>
                 <tr>
                     <td class="d-flex justify-content-between align-items-center">
@@ -116,6 +116,7 @@
                         <input type="checkbox">
                         <span> Remember me </span>
                         </label>
+                        <button type="button" id="submitBtn" class="my-button"> Log In </button>
                         <a class="navbar-brand fs-1 fw-bold d-flex align-items-center" href="#">
                             <a href="Sign Up En.html" class="text-link"> Sign Up </a>
                             <a href="Contact Us En.html" class="text-link"> Contact Us </a>
@@ -125,6 +126,23 @@
                 </tr>
             </tbody>
         </table>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const pass1 = document.getElementById("username");
+                const pass2 = document.getElementById("password");
+                pass1.addEventListener("keydown", function(event) {
+                    if (event.key === "Enter") {
+                        event.preventDefault(); 
+                        pass2.focus();        
+                    }
+                });
+                pass2.addEventListener("keydown", function(event) {
+                    if (event.key === "Enter") {
+                        event.preventDefault();         
+                    }
+                });
+            });
+        </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
