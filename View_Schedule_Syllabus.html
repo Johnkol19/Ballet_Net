@@ -3,103 +3,96 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Schedule & Syllabus - Ballet Net</title>
-    <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule & Syllabus - Ballet Net</title>
+    
+    <link rel="icon" type="image/png" href="photos/BalletArts.png">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" type="text/css" href="background_style.css">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4 shadow-sm">
-        <div class="container-fluid">
-            <a class="navbar-brand fs-1 fw-bold d-flex align-items-center" href="Landing_Page.html">
+    <!-- Το απόλυτα συγχρονισμένο Navbar -->
+    <nav class="navbar navbar-light bg-light mb-4 shadow-sm py-2">
+        <div class="container-fluid d-flex justify-content-between align-items-center px-4 px-lg-5">
+            <a class="navbar-brand fs-2 fw-bold d-flex align-items-center text-ballet" href="Landing_Page.html">
                 <img src="photos/BalletArts.png" alt="Ballet Arts Logo" height="80" class="me-3">
                 Ballet Net
             </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto fs-5">
-                    <li class="nav-item">
-                        <a class="nav-link" href="Landing_Page.html">Landing Page</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Manage_Schedule.html">Manage Schedule</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Approve_Content.html">Approve Content</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active fw-bold text-primary" aria-current="page"
-                            href="View_Schedule_Syllabus.html">Schedule & Syllabus</a>
-                    </li>
-                </ul>
+                
+            <div class="d-flex gap-4 align-items-center">
+                <a href="View_Schedule_Syllabus.html" class="text-link text-ballet" style="font-weight: 700; border-bottom: 2px solid #8B5A83;"> Schedule & Syllabus </a>
+                <a href="Approve_Content.html" class="text-link"> Approve Content </a>
+                <a href="Manage_Schedule.html" class="text-link"> Manage Schedule </a>
+                <a href="Landing_Page.html" class="text-link"> Landing Page </a>
             </div>
         </div>
     </nav>
 
-    <div class="container mt-4 mb-5">
+    <!-- Το Κλασικό Container-fluid για το σωστό πλάτος -->
+    <div class="container-fluid px-4 px-lg-5 mt-4 mb-5">
 
-        <!-- Εναλλακτική Ροή 4.1: Μήνυμα για μη εγγεγραμμένο μαθητή -->
-        <!-- Σημείωση: Το style="display: block;" μπορεί να γίνει "none" μέσω JavaScript αν ο μαθητής είναι εγγεγραμμένος -->
-        <div class="alert alert-warning alert-dismissible fade show shadow-sm" role="alert" id="unregisteredAlert">
-            <strong>Προσοχή!</strong> Αν δεν έχετε εγγραφεί επισήμως σε κάποιο τμήμα για το τρέχον έτος, παρακαλούμε
-            επικοινωνήστε με τη <strong>Γραμματεία</strong>.
+        <div class="alert alert-warning alert-dismissible fade show shadow-sm" role="alert" id="unregisteredAlert" style="border-radius: 12px;">
+            <strong>Προσοχή!</strong> Αν δεν έχετε εγγραφεί επισήμως σε κάποιο τμήμα για το τρέχον έτος, παρακαλούμε επικοινωνήστε με τη <strong>Γραμματεία</strong>.
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
 
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2 class="fw-bold"
-                style="color: #333; background-color: rgba(255,255,255,0.8); padding: 10px; border-radius: 8px;">
-                Εκπαιδευτικός Φάκελος: Πρόγραμμα & Πρόοδος</h2>
+        <div class="d-flex justify-content-between align-items-center mb-5 mt-4">
+            <!-- Προστέθηκε το d-flex align-items-center για τέλεια στοίχιση εικόνας-κειμένου -->
+            <h1 class="fw-bold d-flex align-items-center text-ballet mb-0" style="font-size: 2.5rem;">
+                <img src="photos/dancer.avif" alt="Dancer" height="42" class="me-3 rounded">
+                Εκπαιδευτικός Φάκελος
+            </h1>
         </div>
 
-        <div class="row g-4">
-            <!-- Βασική Ροή 3.2: Εβδομαδιαίο ωρολόγιο πρόγραμμα -->
+        <div class="row g-4 mb-5">
+            
+            <!-- Ωρολόγιο Πρόγραμμα -->
             <div class="col-lg-7">
-                <div class="card shadow border-0 h-100">
-                    <div class="card-header bg-primary text-white fw-bold fs-5">
+                <div class="card shadow-sm border-0 h-100" style="border-radius: 16px; overflow: hidden;">
+                    <div class="card-header bg-ballet text-white fw-bold fs-5 py-3 border-0">
                         Το Ωρολόγιο Πρόγραμμά μου
                     </div>
                     <div class="card-body p-0">
                         <div class="table-responsive">
-                            <table class="table table-hover align-middle mb-0">
+                            <table class="table table-hover align-middle mb-0 fs-5">
                                 <thead class="table-light">
                                     <tr>
-                                        <th>Ημέρα</th>
-                                        <th>Ώρα</th>
-                                        <th>Αίθουσα</th>
-                                        <th>Δασκάλα</th>
-                                        <th>Μάθημα & Επίπεδο</th>
+                                        <th class="py-3 px-4 border-0 text-secondary">Ημέρα</th>
+                                        <th class="py-3 px-3 border-0 text-secondary">Ώρα</th>
+                                        <th class="py-3 px-3 border-0 text-secondary">Αίθουσα</th>
+                                        <th class="py-3 px-3 border-0 text-secondary">Δασκάλα</th>
+                                        <th class="py-3 px-4 border-0 text-secondary">Μάθημα & Επίπεδο</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="fw-bold">Δευτέρα</td>
-                                        <td>19:00 - 20:30</td>
-                                        <td>Αίθουσα 1</td>
-                                        <td>Μαρία Παππά</td>
-                                        <td>Ballet (Intermediate Foundation)</td>
+                                        <td class="fw-bold text-ballet px-4 py-3">Δευτέρα</td>
+                                        <td class="px-3 py-3">19:00 - 20:30</td>
+                                        <td class="px-3 py-3">Αίθουσα 1</td>
+                                        <td class="px-3 py-3">Μαρία Παππά</td>
+                                        <td class="px-4 py-3">Ballet <br><small class="text-muted">Intermediate Foundation</small></td>
                                     </tr>
                                     <tr>
-                                        <td class="fw-bold">Τετάρτη</td>
-                                        <td>19:00 - 20:30</td>
-                                        <td>Αίθουσα 1</td>
-                                        <td>Μαρία Παππά</td>
-                                        <td>Ballet (Advanced Foundation)</td>
+                                        <td class="fw-bold text-ballet px-4 py-3">Τετάρτη</td>
+                                        <td class="px-3 py-3">19:00 - 20:30</td>
+                                        <td class="px-3 py-3">Αίθουσα 1</td>
+                                        <td class="px-3 py-3">Μαρία Παππά</td>
+                                        <td class="px-4 py-3">Ballet <br><small class="text-muted">Advanced Foundation</small></td>
                                     </tr>
                                     <tr>
-                                        <td class="fw-bold">Πέμπτη</td>
-                                        <td>20:30 - 21:30</td>
-                                        <td>Αίθουσα 2</td>
-                                        <td>Ελένη Γεωργίου</td>
-                                        <td>Ballet (Intermediate Foundation)</td>
+                                        <td class="fw-bold text-ballet px-4 py-3">Πέμπτη</td>
+                                        <td class="px-3 py-3">20:30 - 21:30</td>
+                                        <td class="px-3 py-3">Αίθουσα 2</td>
+                                        <td class="px-3 py-3">Ελένη Γεωργίου</td>
+                                        <td class="px-4 py-3">Ballet <br><small class="text-muted">Intermediate Foundation</small></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -108,47 +101,61 @@
                 </div>
             </div>
 
-            <!-- Βασική Ροή 3.3: Διδακτέα ύλη (RAD/ISTD) και ποσοστό ολοκλήρωσης -->
+            <!-- Πρόοδος Ύλης -->
             <div class="col-lg-5">
-                <div class="card shadow border-0 h-100">
-                    <div class="card-header bg-success text-white fw-bold fs-5">
+                <div class="card shadow-sm border-0 h-100" style="border-radius: 16px; overflow: hidden;">
+                    <div class="card-header bg-ballet text-white fw-bold fs-5 py-3 border-0">
                         Πρόοδος Ύλης (RAD / ISTD)
                     </div>
-                    <div class="card-body">
+                    <div class="card-body p-4">
 
                         <div class="mb-4">
-                            <div class="d-flex justify-content-between mb-1">
+                            <div class="d-flex justify-content-between mb-2">
                                 <span class="fw-bold">Συνολικό Ποσοστό Ολοκλήρωσης</span>
-                                <span class="fw-bold text-success">45%</span>
+                                <span class="fw-bold text-success fs-5">45%</span>
                             </div>
-                            <div class="progress" style="height: 20px;">
-                                <div class="progress-bar bg-success" role="progressbar" style="width: 45%;"
-                                    aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                            <div class="progress" style="height: 12px; border-radius: 10px; background-color: #e9ecef;">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 45%; border-radius: 10px;"
+                                    aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
 
-                        <p class="text-muted small mb-3">Αναλυτική εξέλιξη στη διδακτέα ύλη του τρέχοντος επιπέδου (RAD
-                            Intermediate Foundation):</p>
+                        <p class="text-muted small mb-4 lh-base">
+                            Αναλυτική εξέλιξη στη διδακτέα ύλη του τρέχοντος επιπέδου (RAD Intermediate Foundation):
+                        </p>
 
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                Barre Work: Plié, Tendu & Glissades
-                                <span class="badge bg-success rounded-pill shadow-sm">Ολοκληρώθηκε (100%)</span>
+                        <ul class="list-group list-group-flush border-top">
+                            <li class="list-group-item d-flex justify-content-between align-items-start px-0 py-3 border-bottom">
+                                <div>
+                                    <span class="d-block fw-bold mb-1">Barre Work</span>
+                                    <small class="text-muted">Plié, Tendu & Glissades</small>
+                                </div>
+                                <!-- ΑΛΛΑΓΗ ΣΕ ΠΡΑΣΙΝΟ ΕΔΩ -->
+                                <span class="badge bg-success rounded-pill shadow-sm px-3 py-2 mt-1">100%</span>
                             </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                Center Work: Port de Bras & Adagio
-                                <span class="badge bg-info text-dark rounded-pill shadow-sm">Σε Εξέλιξη (60%)</span>
+                            <li class="list-group-item d-flex justify-content-between align-items-start px-0 py-3 border-bottom">
+                                <div>
+                                    <span class="d-block fw-bold mb-1">Center Work</span>
+                                    <small class="text-muted">Port de Bras & Adagio</small>
+                                </div>
+                                <span class="badge bg-info text-white rounded-pill shadow-sm px-3 py-2 mt-1">60%</span>
                             </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                Allegro: Petit Allegro & Grand Allegro
-                                <span class="badge bg-warning text-dark rounded-pill shadow-sm">Αρχικό Στάδιο
-                                    (20%)</span>
+                            <li class="list-group-item d-flex justify-content-between align-items-start px-0 py-3 border-bottom">
+                                <div>
+                                    <span class="d-block fw-bold mb-1">Allegro</span>
+                                    <small class="text-muted">Petit Allegro & Grand Allegro</small>
+                                </div>
+                                <span class="badge bg-warning text-dark rounded-pill shadow-sm px-3 py-2 mt-1">20%</span>
                             </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                Pointe Work: Relevé & Échappé
-                                <span class="badge bg-secondary rounded-pill shadow-sm">Εκκρεμεί (0%)</span>
+                            <li class="list-group-item d-flex justify-content-between align-items-start px-0 py-3 border-bottom-0">
+                                <div>
+                                    <span class="d-block fw-bold mb-1">Pointe Work</span>
+                                    <small class="text-muted">Relevé & Échappé</small>
+                                </div>
+                                <span class="badge bg-secondary rounded-pill shadow-sm px-3 py-2 mt-1">0%</span>
                             </li>
                         </ul>
+                        
                     </div>
                 </div>
             </div>
