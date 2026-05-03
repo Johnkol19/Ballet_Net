@@ -3,10 +3,60 @@
 <head>
     <title>Approve Content - Ballet Net</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="icon" type="image/png" href="photos/BalletArts.png">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- Προσθήκη Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Προσθήκη Google Fonts (Playfair Display & Montserrat) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" type="text/css" href="background_style.css">
+    
     <style>
+        /* Γραμματοσειρές */
+        body, p, a { font-family: 'Montserrat', sans-serif; }
+        h1, h2, h3, h4, .navbar-brand, .modal-title { font-family: 'Playfair Display', serif; }
+
+        /* Χρώματα Ballet Arts */
+        .text-ballet { color: #8B5A83 !important; }
+        .bg-ballet { background-color: #8B5A83 !important; color: white; }
+        .btn-ballet {
+            background-color: #8B5A83;
+            color: white;
+            border: 2px solid #8B5A83;
+            transition: all 0.3s ease;
+        }
+        .btn-ballet:hover {
+            background-color: white;
+            color: #8B5A83;
+        }
+        .btn-outline-ballet {
+            color: #8B5A83;
+            border: 2px solid #8B5A83;
+            background-color: transparent;
+            transition: all 0.3s ease;
+        }
+        .btn-outline-ballet:hover {
+            background-color: #8B5A83;
+            color: white;
+        }
+
+        /* Links Μενού */
+        .text-link {
+            text-decoration: none;
+            color: #6c757d; 
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+        .text-link:hover { color: #8B5A83; }
+
+        /* Custom Στοιχεία σελίδας */
         .card { transition: transform 0.2s; }
         .card:hover { transform: scale(1.02); }
         
@@ -15,7 +65,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: #4285F4; 
+            background-color: rgba(139, 90, 131, 0.9); /* Έγινε μωβ αντί για μπλε */
             color: white;
             width: 65px;
             height: 45px;
@@ -36,115 +86,109 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white mb-4 shadow-sm py-1">
-        <div class="container-fluid">
-            <a class="navbar-brand navbar-brand-custom fs-4 d-flex align-items-center" href="Landing_Page.html">
-                <img src="photos/BalletArts.png" alt="Ballet Arts Logo" height="45" class="me-3">
+    <!-- Ενοποιημένο Navbar με την Landing Page -->
+    <nav class="navbar navbar-light bg-light mb-4 shadow-sm py-2">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <a class="navbar-brand fs-2 fw-bold d-flex align-items-center text-ballet" href="#">
+                <img src="photos/BalletArts.png" alt="Ballet Arts Logo" height="80" class="me-3">
                 Ballet Net
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto fs-6 d-flex align-items-center"> 
-                    <li class="nav-item mx-3">
-                        <a class="text-link" href="Approve_Content.html">Approve Content</a>
-                    </li>
-                    <li class="nav-item mx-3">
-                        <a class="text-link" href="Manage_Schedule.html">Manage Schedule</a>
-                    </li>
-                    <li class="nav-item mx-3">
-                        <a class="text-link" href="Landing_Page.html">Landing Page</a>
-                    </li>
-                </ul>
+                
+            <div class="d-flex gap-4">
+                <a href="Approve_Content.html" class="text-link text-ballet" style="font-weight: 700; border-bottom: 2px solid #8B5A83;"> Approve Content </a>
+                <a href="Manage_Schedule.html" class="text-link"> Manage Schedule </a>
+                <a href="Landing_Page.html" class="text-link"> Landing Page </a>
             </div>
         </div>
     </nav>
 
-    <div class="container mt-4">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2 class="fw-bold d-flex align-items-center mb-0" style="color: #333;">
-                <img src="photos/social_media.jpg" alt="Social Media" height="36" class="me-3 rounded">
+    <div class="container-fluid px-4 px-lg-5 mt-4 mb-5">
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <h2 class="fw-bold d-flex align-items-center mb-0 text-ballet" style="font-size: 2.2rem;">
+                <img src="photos/social_media.jpg" alt="Social Media" height="42" class="me-3 rounded">
                 Εκκρεμές Υλικό Social Media
             </h2>
-            <div>
-                <span class="badge bg-primary fs-6 align-middle me-2">4 Νέα Αρχεία</span>
-                <button class="btn btn-sm text-white fw-bold shadow-sm" style="background-color: rgba(220, 143, 143, 1); border: none;" data-bs-toggle="modal" data-bs-target="#statsModal">📊 Στατιστικά</button>
+            <div class="d-flex align-items-center">
+                <span class="badge bg-ballet fs-5 px-3 py-2 align-middle me-3 rounded-pill shadow-sm">4 Νέα Αρχεία</span>
+                <button class="btn btn-ballet px-4 py-2 shadow-sm fw-bold fs-5 rounded-pill" data-bs-toggle="modal" data-bs-target="#statsModal">📊 Στατιστικά</button>
             </div>
         </div>
         
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-5">
-            
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4 mb-5">
+            <!-- Κάρτα 1 -->
             <div class="col">
-                <div class="card h-100 shadow border-0">
+                <div class="card h-100 shadow-sm feature-card border-0" style="border-radius: 12px;">
                     <div class="position-relative">
-                        <img src="photos/sample_dance1.webp" class="card-img-top" alt="Rehearsal" style="height: 180px; object-fit: cover;">
-                        <span class="position-absolute top-0 end-0 m-2 badge bg-warning text-dark shadow-sm">Προς Έγκριση</span>
-                        <span class="position-absolute bottom-0 start-0 m-2 badge badge-bottom-left">Φωτογραφία</span>
+                        <img src="photos/sample_dance1.webp" class="card-img-top" alt="Rehearsal" style="height: 250px; object-fit: cover; border-top-left-radius: 12px; border-top-right-radius: 12px;">
+                        <span class="position-absolute top-0 end-0 m-3 badge bg-warning text-dark shadow-sm fs-6">Προς Έγκριση</span>
+                        <span class="position-absolute bottom-0 start-0 m-3 badge badge-bottom-left fs-6">Φωτογραφία</span>
                     </div>
-                    <div class="card-body">
-                        <h6 class="fw-bold text-primary mb-1">Grade 3 - Rehearsal</h6>
-                        <p class="text-muted mb-2" style="font-size: 0.8rem;">Για: Instagram • Πριν 2ώ</p>
-                        <p class="card-text small">Στιγμιότυπο από την πρόβα των νέων στολών.</p>
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold text-ballet mb-2">Grade 3 - Rehearsal</h5>
+                        <p class="text-muted mb-3 small">Για: Instagram • Πριν 2ώ</p>
+                        <p class="card-text">Στιγμιότυπο από την πρόβα των νέων στολών.</p>
                     </div>
-                    <div class="card-footer bg-white border-0 pb-3">
-                        <button class="btn btn-outline-primary w-100 btn-sm fw-bold" data-bs-toggle="modal" data-bs-target="#reviewModal" data-image="photos/sample_dance1.webp">ΕΞΕΤΑΣΗ</button>
+                    <div class="card-footer bg-transparent border-0 p-4 pt-0">
+                        <button class="btn btn-outline-ballet w-100 py-2 fw-bold rounded-pill" data-bs-toggle="modal" data-bs-target="#reviewModal" data-image="photos/sample_dance1.webp">ΕΞΕΤΑΣΗ</button>
                     </div>
                 </div>
             </div>
 
+            <!-- Κάρτα 2 -->
             <div class="col">
-                <div class="card h-100 shadow border-0">
+                <div class="card h-100 shadow-sm feature-card border-0" style="border-radius: 12px;">
                     <div class="position-relative">
-                        <img src="photos/sample_dance2.webp" class="card-img-top" alt="Video Thumbnail" style="height: 180px; object-fit: cover; filter: brightness(0.85);">
-                        <div class="blue-play-btn">▶</div>
-                        
-                        <span class="position-absolute top-0 end-0 m-2 badge bg-warning text-dark shadow-sm">Προς Έγκριση</span>
-                        <span class="position-absolute bottom-0 start-0 m-2 badge bg-danger opacity-75">Βίντεο (0:45)</span>
+                        <img src="photos/sample_dance2.webp" class="card-img-top" alt="Video Thumbnail" style="height: 250px; object-fit: cover; filter: brightness(0.85); border-top-left-radius: 12px; border-top-right-radius: 12px;">
+                        <!-- Inline style για να μεγαλώσει το play button χωρίς να πειράξουμε τη <style> σου -->
+                        <div class="blue-play-btn" style="width: 75px; height: 55px; font-size: 32px;">▶</div>
+                        <span class="position-absolute top-0 end-0 m-3 badge bg-warning text-dark shadow-sm fs-6">Προς Έγκριση</span>
+                        <span class="position-absolute bottom-0 start-0 m-3 badge bg-danger opacity-75 fs-6">Βίντεο (0:45)</span>
                     </div>
-                    <div class="card-body">
-                        <h6 class="fw-bold text-primary mb-1">Contemporary Level 2</h6>
-                        <p class="text-muted mb-2" style="font-size: 0.8rem;">Για: TikTok • Πριν 5ώ</p>
-                        <p class="card-text small">Απόσπασμα από τη νέα χορογραφία.</p>
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold text-ballet mb-2">Contemporary Level 2</h5>
+                        <p class="text-muted mb-3 small">Για: TikTok • Πριν 5ώ</p>
+                        <p class="card-text">Απόσπασμα από τη νέα χορογραφία.</p>
                     </div>
-                    <div class="card-footer bg-white border-0 pb-3">
-                        <button class="btn btn-outline-primary w-100 btn-sm fw-bold" data-bs-toggle="modal" data-bs-target="#reviewModal" data-image="photos/sample_dance2.webp">ΕΞΕΤΑΣΗ</button>
+                    <div class="card-footer bg-transparent border-0 p-4 pt-0">
+                        <button class="btn btn-outline-ballet w-100 py-2 fw-bold rounded-pill" data-bs-toggle="modal" data-bs-target="#reviewModal" data-image="photos/sample_dance2.webp">ΕΞΕΤΑΣΗ</button>
                     </div>
                 </div>
             </div>
 
+            <!-- Κάρτα 3 -->
             <div class="col">
-                <div class="card h-100 shadow border-0">
+                <div class="card h-100 shadow-sm feature-card border-0" style="border-radius: 12px;">
                     <div class="position-relative">
-                        <img src="photos/selfie.jpg" class="card-img-top" alt="UGC" style="height: 180px; object-fit: cover;">
-                        <span class="position-absolute top-0 end-0 m-2 badge bg-warning text-dark shadow-sm">Προς Έγκριση</span>
-                        <span class="position-absolute bottom-0 start-0 m-2 badge bg-success opacity-85">Selfie</span>
+                        <img src="photos/selfie.jpg" class="card-img-top" alt="UGC" style="height: 250px; object-fit: cover; border-top-left-radius: 12px; border-top-right-radius: 12px;">
+                        <span class="position-absolute top-0 end-0 m-3 badge bg-warning text-dark shadow-sm fs-6">Προς Έγκριση</span>
+                        <span class="position-absolute bottom-0 start-0 m-3 badge bg-success opacity-85 fs-6">Selfie</span>
                     </div>
-                    <div class="card-body">
-                        <h6 class="fw-bold text-primary mb-1">Backstage Fun</h6>
-                        <p class="text-muted mb-2" style="font-size: 0.8rem;">Για: Instagram • Πριν 1ημ</p>
-                        <p class="card-text small">Selfie των μαθητριών (GDPR Approved).</p>
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold text-ballet mb-2">Backstage Fun</h5>
+                        <p class="text-muted mb-3 small">Για: Instagram • Πριν 1ημ</p>
+                        <p class="card-text">Selfie των μαθητριών (GDPR Approved).</p>
                     </div>
-                    <div class="card-footer bg-white border-0 pb-3">
-                        <button class="btn btn-outline-primary w-100 btn-sm fw-bold" data-bs-toggle="modal" data-bs-target="#reviewModal" data-image="photos/selfie.jpg">ΕΞΕΤΑΣΗ</button>
+                    <div class="card-footer bg-transparent border-0 p-4 pt-0">
+                        <button class="btn btn-outline-ballet w-100 py-2 fw-bold rounded-pill" data-bs-toggle="modal" data-bs-target="#reviewModal" data-image="photos/selfie.jpg">ΕΞΕΤΑΣΗ</button>
                     </div>
                 </div>
             </div>
 
+            <!-- Κάρτα 4 -->
             <div class="col">
-                <div class="card h-100 shadow border-0">
+                <div class="card h-100 shadow-sm feature-card border-0" style="border-radius: 12px;">
                     <div class="position-relative">
-                        <img src="photos/sample_dance3.webp" class="card-img-top" alt="Exams" style="height: 180px; object-fit: cover;">
-                        <span class="position-absolute top-0 end-0 m-2 badge bg-warning text-dark shadow-sm">Προς Έγκριση</span>
-                        <span class="position-absolute bottom-0 start-0 m-2 badge badge-bottom-left">Φωτογραφία</span>
+                        <img src="photos/sample_dance3.webp" class="card-img-top" alt="Exams" style="height: 250px; object-fit: cover; border-top-left-radius: 12px; border-top-right-radius: 12px;">
+                        <span class="position-absolute top-0 end-0 m-3 badge bg-warning text-dark shadow-sm fs-6">Προς Έγκριση</span>
+                        <span class="position-absolute bottom-0 start-0 m-3 badge badge-bottom-left fs-6">Φωτογραφία</span>
                     </div>
-                    <div class="card-body">
-                        <h6 class="fw-bold text-primary mb-1">RAD Exams Prep</h6>
-                        <p class="text-muted mb-2" style="font-size: 0.8rem;">Για: Facebook • Πριν 2ημ</p>
-                        <p class="card-text small">Προετοιμασία για τις εξετάσεις RAD.</p>
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold text-ballet mb-2">RAD Exams Prep</h5>
+                        <p class="text-muted mb-3 small">Για: Facebook • Πριν 2ημ</p>
+                        <p class="card-text">Προετοιμασία για τις εξετάσεις RAD.</p>
                     </div>
-                    <div class="card-footer bg-white border-0 pb-3">
-                        <button class="btn btn-outline-primary w-100 btn-sm fw-bold" data-bs-toggle="modal" data-bs-target="#reviewModal" data-image="photos/sample_dance3.webp">ΕΞΕΤΑΣΗ</button>
+                    <div class="card-footer bg-transparent border-0 p-4 pt-0">
+                        <button class="btn btn-outline-ballet w-100 py-2 fw-bold rounded-pill" data-bs-toggle="modal" data-bs-target="#reviewModal" data-image="photos/sample_dance3.webp">ΕΞΕΤΑΣΗ</button>
                     </div>
                 </div>
             </div>
@@ -152,72 +196,73 @@
         </div>
     </div>
 
-    <div class="modal fade" id="statsModal" tabindex="-1" aria-labelledby="statsModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content shadow-lg">
-                <div class="modal-header text-white" style="background-color: rgba(220, 143, 143, 1);">
-                    <h5 class="modal-title fw-bold" id="statsModalLabel">📊 Στατιστικά Αξιολογήσεων</h5>
+   <div class="modal fade" id="statsModal" tabindex="-1" aria-labelledby="statsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content shadow-lg border-0" style="border-radius: 16px; overflow: hidden;">
+                <div class="modal-header text-white bg-ballet border-0 p-4">
+                    <h4 class="modal-title fw-bold" id="statsModalLabel">📊 Στατιστικά Αξιολογήσεων</h4>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-                <div class="modal-body p-4">
-                    <table class="table table-bordered table-hover text-center align-middle mb-0">
+                </div>
+                <div class="modal-body p-5">
+                    <table class="table table-borderless table-hover text-center align-middle mb-0 fs-5">
                         <thead class="table-light">
                             <tr>
-                                <th class="text-start">Περίοδος</th>
-                                <th class="text-success">Εγκρίθηκαν</th>
-                                <th class="text-danger">Απορρίφθηκαν</th>
-                                <th class="text-warning text-dark">Εκκρεμή</th>
+                                <th class="text-start py-3">Περίοδος</th>
+                                <th class="text-success py-3">Εγκρίθηκαν</th>
+                                <th class="text-danger py-3">Απορρίφθηκαν</th>
+                                <th class="text-warning text-dark py-3">Εκκρεμή</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="text-start fw-bold">Εβδομάδα</td>
-                                <td>12</td>
-                                <td>2</td>
-                                <td class="fw-bold fs-5">4</td>
+                                <td class="text-start fw-bold py-3">Εβδομάδα</td>
+                                <td class="py-3">12</td>
+                                <td class="py-3">2</td>
+                                <td class="fw-bold fs-4 py-3">4</td>
                             </tr>
                             <tr>
-                                <td class="text-start fw-bold">Μήνας</td>
-                                <td>45</td>
-                                <td>8</td>
-                                <td class="fw-bold fs-5">4</td>
+                                <td class="text-start fw-bold py-3">Μήνας</td>
+                                <td class="py-3">45</td>
+                                <td class="py-3">8</td>
+                                <td class="fw-bold fs-4 py-3">4</td>
                             </tr>
-                            <tr class="table-secondary">
-                                <td class="text-start fw-bold">Σύνολο</td>
-                                <td class="fw-bold">128</td>
-                                <td class="fw-bold">15</td>
-                                <td class="fw-bold fs-5">4</td>
+                            <tr class="table-secondary rounded">
+                                <td class="text-start fw-bold rounded-start py-3">Σύνολο</td>
+                                <td class="fw-bold py-3">128</td>
+                                <td class="fw-bold py-3">15</td>
+                                <td class="fw-bold fs-4 rounded-end py-3">4</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <div class="modal-footer bg-light">
-                    <button type="button" class="btn btn-secondary px-4 fw-bold" data-bs-dismiss="modal">ΚΛΕΙΣΙΜΟ</button>
+                <div class="modal-footer bg-light border-0 p-4">
+                    <button type="button" class="btn btn-secondary btn-lg px-5 fw-bold rounded-pill" data-bs-dismiss="modal">ΚΛΕΙΣΙΜΟ</button>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Modal Εξέτασης -->
     <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content shadow-lg">
-                <div class="modal-header bg-light">
-                    <h5 class="modal-title fw-bold" id="reviewModalLabel">Αξιολόγηση Περιεχομένου</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content shadow-lg border-0" style="border-radius: 16px; overflow: hidden;">
+                <div class="modal-header text-white bg-ballet border-0 p-4">
+                    <h4 class="modal-title fw-bold" id="reviewModalLabel">Αξιολόγηση Περιεχομένου</h4>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body text-center p-4">
-                    <img id="modalImage" src="" class="img-fluid rounded shadow-sm mb-4" alt="Προβολή Αρχείου" style="width: 100%; max-height: 350px; object-fit: cover; object-position: center;">
+                <div class="modal-body text-center p-5">
+                    <img id="modalImage" src="" class="img-fluid rounded shadow-sm mb-5" alt="Προβολή Αρχείου" style="width: 100%; max-height: 500px; object-fit: cover; object-position: center; border-radius: 12px;">
                     
                     <div class="text-start">
-                        <label class="form-label fw-bold text-secondary small text-uppercase">ΣΧΟΛΙΑ / ΑΙΤΙΟΛΟΓΙΑ (Υποχρεωτικό σε περίπτωση απόρριψης)</label>
-                        <textarea class="form-control border-2" rows="3" placeholder="Γράψτε εδώ τις παρατηρήσεις σας για τη SMM..."></textarea>
+                        <label class="form-label fw-bold text-secondary text-uppercase fs-6">ΣΧΟΛΙΑ / ΑΙΤΙΟΛΟΓΙΑ (Υποχρεωτικό σε περίπτωση απόρριψης)</label>
+                        <textarea class="form-control border-2 rounded-3 fs-5 p-3" rows="4" placeholder="Γράψτε εδώ τις παρατηρήσεις σας για τη SMM..."></textarea>
                     </div>
                 </div>
-                <div class="modal-footer bg-light d-flex justify-content-between">
-                    <button type="button" class="btn btn-danger px-4 fw-bold shadow-sm" data-bs-dismiss="modal">ΑΠΟΡΡΙΨΗ</button>
+                <div class="modal-footer bg-light border-0 d-flex justify-content-between p-4">
+                    <button type="button" class="btn btn-danger btn-lg px-5 fw-bold shadow-sm rounded-pill" data-bs-dismiss="modal">ΑΠΟΡΡΙΨΗ</button>
                     <div>
-                        <button type="button" class="btn btn-secondary px-3" data-bs-dismiss="modal">ΚΛΕΙΣΙΜΟ</button>
-                        <button type="button" class="btn btn-success px-4 fw-bold shadow-sm" data-bs-dismiss="modal">ΕΓΚΡΙΣΗ</button>
+                        <button type="button" class="btn btn-secondary btn-lg px-4 rounded-pill me-2" data-bs-dismiss="modal">ΚΛΕΙΣΙΜΟ</button>
+                        <button type="button" class="btn btn-success btn-lg px-5 fw-bold shadow-sm rounded-pill" data-bs-dismiss="modal">ΕΓΚΡΙΣΗ</button>
                     </div>
                 </div>
             </div>
