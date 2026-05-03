@@ -5,3 +5,15 @@ body {
     background-attachment: fixed;
     background-color: #f8f9fa;
 }
+
+.text-link {
+    color: rgba(220, 143, 143, 1) !important;
+    text-decoration: none !important;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.text-link:hover {
+    color: #5d575d !important;
+    text-decoration: underline !important;
+}
