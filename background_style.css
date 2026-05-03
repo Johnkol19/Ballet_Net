@@ -1,5 +1,5 @@
 body {
-    background-image: url('photos/purple_waves.jpg');
+    background-image: url('photos/purple_waves.jpg'); 
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -16,4 +16,21 @@ body {
 .text-link:hover {
     color: #5d575d !important;
     text-decoration: underline !important;
+}
+
+.btn-ballet {
+    background-color: rgba(220, 143, 143, 1) !important;
+    color: white !important;
+    border: none !important;
+    font-weight: bold !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-ballet:hover {
+    background-color: #5d575d !important;
+}
+
+.navbar-brand-custom {
+    color: #4a4a4a !important;
+    font-weight: bold !important;
 }
