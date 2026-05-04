@@ -354,12 +354,12 @@
                     <form>
                         <div class="mb-4">
                             <label class="form-label text-secondary small text-uppercase fw-bold fs-6">ΩΡΑ</label>
-                            <input type="text" class="form-control border-2 rounded-3 fs-5 p-3" value="17:30 - 18:15">
+                            <input type="text" id="editTime" class="form-control border-2 rounded-3 fs-5 p-3" value="17:30 - 18:15">
                         </div>
                         
                         <div class="mb-4">
                             <label class="form-label text-secondary small text-uppercase fw-bold fs-6">ΜΑΘΗΜΑ</label>
-                            <select class="form-select border-2 rounded-3 fs-5 p-3">
+                            <select id="editSubject" class="form-select border-2 rounded-3 fs-5 p-3">
                                 <option selected>Ballet</option>
                                 <option>Contemporary</option>
                                 <option>Musical</option>
@@ -370,14 +370,14 @@
                         
                         <div class="mb-4">
                             <label class="form-label text-secondary small text-uppercase fw-bold fs-6">ΤΜΗΜΑ / ΕΠΙΠΕΔΟ</label>
-                            <input type="text" class="form-control border-2 rounded-3 fs-5 p-3" value="Pre-Primary">
+                            <input type="text" id="editLevel" class="form-control border-2 rounded-3 fs-5 p-3" value="Pre-Primary">
                         </div>
                     </form>
                 </div>
               
                 <div class="modal-footer bg-light border-0 p-4">
                     <button type="button" class="btn btn-secondary btn-lg px-4 rounded-pill" data-bs-dismiss="modal">Ακύρωση</button>
-                    <button type="button" class="btn btn-ballet btn-lg px-5 fw-bold shadow-sm rounded-pill" data-bs-dismiss="modal">Αποθήκευση Αλλαγών</button>
+                    <button type="button" id="saveChangesBtn" class="btn btn-ballet btn-lg px-5 fw-bold shadow-sm rounded-pill" data-bs-dismiss="modal">Αποθήκευση Αλλαγών</button>
                 </div>
               
             </div>
