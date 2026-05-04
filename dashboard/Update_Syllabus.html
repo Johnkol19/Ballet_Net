@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Syllabus - Ballet Net</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" type="image/png" href="../photos/BalletArts.png">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="../css/background_style.css">
+</head>
+<body>
+
+     <nav class="navbar navbar-light bg-light mb-4 shadow-sm py-2">
+        <div class="container-fluid d-flex justify-content-between align-items-center px-4 px-lg-5">
+            <a class="navbar-brand fs-2 fw-bold d-flex align-items-center text-ballet" href="../Landing_Page.html">
+                <img src="../photos/BalletArts.png" alt="Ballet Arts Logo" height="80" class="me-3">
+                Ballet Net
+            </a>
+                
+            <div class="d-flex gap-4 align-items-center">
+                <a href="Update_Syllabus.html" class="text-link text-ballet" style="font-weight: 700; border-bottom: 2px solid #8B5A83;"> Update Syllabus </a>
+                <a href="View_Schedule_Syllabus.html" class="text-link"> Schedule & Syllabus </a>
+                <a href="Approve_Content.html" class="text-link"> Approve Content </a>
+                <a href="Manage_Schedule.html" class="text-link"> Manage Schedule </a>
+                <a href="../Landing_Page.html" class="text-link"> Landing Page </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Απλωμένο Layout -->
+    <div class="container-fluid px-4 px-lg-5 mt-4 mb-5">
+
+        <div class="d-flex justify-content-between align-items-center mb-5 mt-4">
+            <h1 class="fw-bold d-flex align-items-center text-ballet mb-0" style="font-size: 2.5rem;">
+                <img src="../photos/progress.png" alt="Progress" height="42" class="me-3 rounded">
+                Διαχείριση Ύλης & Προόδου
+            </h1>
+            <span class="badge bg-ballet rounded-pill fs-5 px-4 py-2 shadow-sm">Δασκάλα: Μαρία Παππά</span>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                
+                <div class="card shadow-sm border-0 h-100" style="border-radius: 16px; overflow: hidden;">
+                    <div class="card-header bg-ballet text-white fw-bold py-4 px-5 border-0 d-flex justify-content-between align-items-center">
+                        <span class="fs-4">Ballet (Intermediate Foundation)</span>
+                        <span class="badge bg-light text-ballet rounded-pill fs-6 px-4 py-2 shadow-sm">Αίθουσα 1 • Τετάρτη 19:00</span>
+                    </div>
+                    
+                    <div class="card-body p-5">
+                        <p class="text-muted fs-6 mb-5 lh-base">
+                            Ενημερώστε την πρόοδο της διδακτέας ύλης (RAD) μετακινώντας τους δείκτες. Οι μαθητές θα δουν αυτόματα τις αλλαγές στον Εκπαιδευτικό τους Φάκελο.
+                        </p>
+
+                        <!-- Sliders με περισσότερο αέρα και στρογγυλεμένα badges -->
+                        <div class="mb-5">
+                            <label class="form-label d-flex justify-content-between align-items-center fw-bold fs-5 mb-3">
+                                <span>1. Barre Work: Plié, Tendu & Glissades</span>
+                                <span class="badge bg-success rounded-pill px-3 py-2 fs-6 shadow-sm" id="badge1">Ολοκληρώθηκε (100%)</span>
+                            </label>
+                            <input type="range" class="form-range" min="0" max="100" step="20" value="100" oninput="updateBadge(this, 'badge1')">
+                        </div>
+
+                        <div class="mb-5">
+                            <label class="form-label d-flex justify-content-between align-items-center fw-bold fs-5 mb-3">
+                                <span>2. Center Work: Port de Bras & Adagio</span>
+                                <span class="badge bg-info text-white rounded-pill px-3 py-2 fs-6 shadow-sm" id="badge2">Σε Εξέλιξη (60%)</span>
+                            </label>
+                            <input type="range" class="form-range" min="0" max="100" step="20" value="60" oninput="updateBadge(this, 'badge2')">
+                        </div>
+
+                        <div class="mb-5">
+                            <label class="form-label d-flex justify-content-between align-items-center fw-bold fs-5 mb-3">
+                                <span>3. Allegro: Petit Allegro & Grand Allegro</span>
+                                <span class="badge bg-warning text-dark rounded-pill px-3 py-2 fs-6 shadow-sm" id="badge3">Αρχικό Στάδιο (20%)</span>
+                            </label>
+                            <input type="range" class="form-range" min="0" max="100" step="20" value="20" oninput="updateBadge(this, 'badge3')">
+                        </div>
+
+                        <div class="mb-5">
+                            <label class="form-label d-flex justify-content-between align-items-center fw-bold fs-5 mb-3">
+                                <span>4. Pointe Work: Relevé & Échappé</span>
+                                <span class="badge bg-secondary rounded-pill px-3 py-2 fs-6 shadow-sm" id="badge4">Εκκρεμεί (0%)</span>
+                            </label>
+                            <input type="range" class="form-range" min="0" max="100" step="20" value="0" oninput="updateBadge(this, 'badge4')">
+                        </div>
+                        
+                        <!-- Textarea -->
+                        <div class="mt-5 pt-5 border-top">
+                            <label class="form-label fw-bold d-flex justify-content-between align-items-center fs-5 mb-3">
+                                <span>📝 Τι κάναμε σήμερα; (Ημερολόγιο Μαθήματος)</span>
+                                <span class="badge bg-light text-secondary rounded-pill fw-normal px-3 py-2 border">Ορατό σε μαθητές & γραμματεία</span>
+                            </label>
+                            <textarea class="form-control border-2 rounded-3 fs-5 p-4" rows="3" placeholder="Π.χ. Σήμερα εστιάσαμε στα Plié και προχωρήσαμε την χορογραφία του Adagio..."></textarea>
+                        </div>
+
+                    </div>
+                    
+                    <!-- Μεγάλα, μοντέρνα κουμπιά στο Footer -->
+                    <div class="card-footer bg-white border-0 p-5 pt-0 text-end">
+                        <button class="btn btn-outline-secondary btn-lg rounded-pill px-5 fw-bold me-3">ΑΚΥΡΩΣΗ</button>
+                        <button class="btn btn-ballet btn-lg rounded-pill px-5 fw-bold shadow-sm" data-bs-toggle="modal" data-bs-target="#successModal">ΑΠΟΘΗΚΕΥΣΗ ΠΡΟΟΔΟΥ</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content text-center p-4 shadow-lg border-0" style="border-radius: 16px;">
+                <div class="modal-body">
+                    <h1 class="text-success mb-3" style="font-size: 4rem;"><i class="bi bi-check-circle-fill"></i></h1>
+                    <h4 class="fw-bold mb-3">Επιτυχής Αποθήκευση</h4>
+                    <p class="text-muted fs-6 mb-4">Η πρόοδος του τμήματος ενημερώθηκε επιτυχώς!</p>
+                    <button type="button" class="btn btn-secondary btn-lg rounded-pill w-100 fw-bold" data-bs-dismiss="modal">Κλείσιμο</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        function updateBadge(slider, badgeId) {
+            const badge = document.getElementById(badgeId);
+            const val = parseInt(slider.value);
+            
+            badge.classList.remove('bg-secondary', 'bg-warning', 'bg-info', 'bg-success', 'text-dark', 'text-white');
+            
+            if (val === 0) {
+                badge.textContent = "Εκκρεμεί (0%)";
+                badge.classList.add('bg-secondary', 'text-white');
+            } else if (val <= 40) {
+                badge.textContent = "Αρχικό Στάδιο (" + val + "%)";
+                badge.classList.add('bg-warning', 'text-dark');
+            } else if (val <= 80) {
+                badge.textContent = "Σε Εξέλιξη (" + val + "%)";
+                badge.classList.add('bg-info', 'text-white');
+            } else {
+                badge.textContent = "Ολοκληρώθηκε (" + val + "%)";
+                badge.classList.add('bg-success', 'text-white');
+            }
+        }
+    </script>
+</body>
+</html>
