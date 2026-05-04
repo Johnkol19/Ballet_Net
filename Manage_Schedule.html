@@ -33,7 +33,7 @@
         </div>
     </nav>
 
-    <!-- Απλωμένο Layout -->
+
     <div class="container-fluid px-4 px-lg-5 mt-4 mb-5">
         
         <div class="d-flex justify-content-between align-items-center mb-5">
@@ -43,7 +43,7 @@
             </h1>
         </div>
 
-        <!-- Custom Tabs -->
+
         <ul class="nav nav-tabs custom-tabs mb-4 border-bottom-0" id="scheduleTabs" role="tablist">
             <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="room1-tab" data-bs-toggle="tab" data-bs-target="#room1" type="button" role="tab">Αίθουσα 1</button>
@@ -383,7 +383,55 @@
             </div>
         </div>
     </div>
+    <script>
+        // Μεταβλητή για να θυμόμαστε ποια γραμμή (tr) του πίνακα πατήθηκε
+        let currentRow = null;
+    
+        // Βρίσκουμε το Modal
+        const editModal = document.getElementById('editModal');
+    
 
+        // Χρησιμοποιούμε το έτοιμο event του Bootstrap που "ακούει" πότε ανοίγει το modal
+        editModal.addEventListener('show.bs.modal', function (event) {
+            
+            // Το κουμπί "Επεξεργασία" που πατήθηκε
+            const button = event.relatedTarget;
+            
+            // Βρίσκουμε την "κοντινότερη" γραμμή (tr) που περιέχει αυτό το κουμπί
+            currentRow = button.closest('tr');
+            
+            // Παίρνουμε όλα τα κελιά (td) αυτής της γραμμής
+            const cells = currentRow.querySelectorAll('td');
+            
+            // Διαβάζουμε το κείμενο από τα 3 πρώτα κελιά
+            const time = cells[0].innerText;
+            const subject = cells[1].innerText;
+            const level = cells[2].innerText;
+            
+            // Γράφουμε τα δεδομένα μέσα στα πεδία του Modal
+            document.getElementById('editTime').value = time;
+            document.getElementById('editSubject').value = subject;
+            document.getElementById('editLevel').value = level;
+        });
+    
+
+        document.getElementById('saveChangesBtn').addEventListener('click', function () {
+            if (currentRow) {
+                // Διαβάζουμε τι νέο έγραψε ο χρήστης στο Modal
+                const newTime = document.getElementById('editTime').value;
+                const newSubject = document.getElementById('editSubject').value;
+                const newLevel = document.getElementById('editLevel').value;
+                
+                // Βρίσκουμε πάλι τα κελιά (td) της ενεργής γραμμής
+                const cells = currentRow.querySelectorAll('td');
+                
+                // Ενημερώνουμε (ζωγραφίζουμε) τον πίνακα με τις νέες τιμές
+                cells[0].innerText = newTime;
+                cells[1].innerText = newSubject;
+                cells[2].innerText = newLevel;
+            }
+        });
+    </script>
     <!-- Script Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
