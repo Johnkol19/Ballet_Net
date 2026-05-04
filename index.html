@@ -23,29 +23,41 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-light mb-4 shadow-sm py-2">
-        <div class="container-fluid d-flex justify-content-between align-items-center px-4 px-lg-5">
-            <a class="navbar-brand fs-2 fw-bold d-flex align-items-center text-ballet" href="index.html">
-                <img src="photos/BalletArts.png" alt="Ballet Arts Logo" height="80" class="me-3">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4 shadow-sm py-2">
+        <div class="container-fluid px-4 px-lg-5">
+            
+
+            <a class="navbar-brand fs-3 fw-bold d-flex align-items-center text-ballet" href="index.html">
+                <img src="photos/BalletArts.png" alt="Ballet Arts Logo" height="60" class="me-2">
                 Ballet Net
             </a>
+    
+            <!-- Το κουμπί για τα κινητά (Hamburger) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Το Μενού που ανοιγοκλείνει -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <div class="navbar-nav gap-3 text-center mt-3 mt-lg-0">
+                    <a href="dashboard/Update_Syllabus.html" class="nav-link text-link"> Update Syllabus </a>
+                    <a href="dashboard/View_Schedule_Syllabus.html" class="nav-link text-link"> Schedule & Syllabus </a>
+                    <a href="dashboard/Approve_Content.html" class="nav-link text-link"> Approve Content </a>
+                    <a href="dashboard/Manage_Schedule.html" class="nav-link text-link"> Manage Schedule </a>
+                    
 
-            <div class="d-flex gap-4 align-items-center">
-                <a href="dashboard/Update_Syllabus.html" class="text-link"> Update Syllabus </a>
-                <a href="dashboard/View_Schedule_Syllabus.html" class="text-link"> Schedule & Syllabus </a>
-                <a href="dashboard/Approve_Content.html" class="text-link"> Approve Content </a>
-                <a href="dashboard/Manage_Schedule.html" class="text-link"> Manage Schedule </a>
-                <a href="#" class="text-link text-ballet" style="font-weight: 700; border-bottom: 2px solid #8B5A83;"> Landing Page </a>
+                    <a href="#" class="nav-link text-ballet" style="font-weight: 700; border-bottom: 2px solid #8B5A83;"> Landing Page </a>
+                </div>
             </div>
+    
         </div>
     </nav>
 
     <div class="container mb-5 mt-4">
-        <div class="bg-white p-5 shadow-sm main-content-box">
+        <div class="bg-white p-3 p-md-5 shadow-sm main-content-box">
 
             <div class="text-center mb-5 pb-3">
-                <h1 class="fw-bold mb-3 text-ballet" data-el="Καλώς ήρθατε στο Ballet Net"
-                    data-en="Welcome to Ballet Net" style="font-size: 3rem;">
+                <h1 class="display-5 fw-bold mb-3 text-ballet" data-el="Καλώς ήρθατε στο Ballet Net" data-en="Welcome to Ballet Net">
                     Καλώς ήρθατε στο Ballet Net
                 </h1>
                 <h4 class="text-muted fw-normal mt-3" data-el="Χορεύουμε με πειθαρχία, έκφραση και αγάπη για την τέχνη."
