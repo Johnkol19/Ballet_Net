@@ -37,25 +37,27 @@
         <div class="card shadow-lg border-0 rounded-4 w-100" style="max-width: 500px; overflow: hidden;">
             <div class="card-header bg-ballet text-center fw-bold fs-3 py-4 border-0">Sign Up</div>
             <div class="card-body p-5 bg-white">
-                <div class="mb-4">
-                    <label class="form-label text-secondary small fw-bold text-uppercase">Username</label>
-                    <input type="text" id="username" class="form-control border-2 p-3 rounded-3"
-                        placeholder="Enter username">
-                </div>
-                <div class="mb-4">
-                    <label class="form-label text-secondary small fw-bold text-uppercase">Password</label>
-                    <input type="password" id="passwordMain" class="form-control border-2 p-3 rounded-3"
-                        placeholder="Enter password">
-                </div>
-                <div class="mb-4">
-                    <label class="form-label text-secondary small fw-bold text-uppercase">Confirm Password</label>
-                    <input type="password" id="passwordConfirm" class="form-control border-2 p-3 rounded-3"
-                        placeholder="Confirm password">
-                </div>
-                <div class="d-grid pt-2">
-                    <button type="button" id="submitBtn"
-                        class="btn btn-ballet btn-lg fw-bold shadow-sm rounded-pill py-3">Create Account</button>
-                </div>
+                <form id="signupForm" action="/register-endpoint" method="POST">
+                    <div class="mb-4">
+                        <label class="form-label text-secondary small fw-bold text-uppercase">Username</label>
+                        <input type="text" id="username" class="form-control border-2 p-3 rounded-3"
+                            placeholder="Enter username" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label text-secondary small fw-bold text-uppercase">Password</label>
+                        <input type="password" id="passwordMain" class="form-control border-2 p-3 rounded-3"
+                            placeholder="Enter password" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label text-secondary small fw-bold text-uppercase">Confirm Password</label>
+                        <input type="password" id="passwordConfirm" class="form-control border-2 p-3 rounded-3"
+                            placeholder="Confirm password" required>
+                    </div>
+                    <div class="d-grid pt-2">
+                        <button type="submit" id="submitBtn"
+                            class="btn btn-ballet btn-lg fw-bold shadow-sm rounded-pill py-3">Create Account</button>
+                    </div>
+                </form>
             </div>
             <div class="card-footer bg-light border-0 text-center py-4">
                 <a href="Log_In_En.html" class="text-link mx-2">Log In</a> |
@@ -83,14 +85,26 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const p1 = document.getElementById("username"), p2 = document.getElementById("passwordMain"), p3 = document.getElementById("passwordConfirm"), btn = document.getElementById("submitBtn");
-            function check() {
-                if (p2.value !== p3.value) { new bootstrap.Modal(document.getElementById("passwordErrorModal")).show(); p3.value = ""; }
-                else if (!p2.value || !p3.value) { alert("Fields cannot be empty!"); }
-                else { console.log("Success!"); }
-            }
-            btn.addEventListener("click", check);
-            [p1, p2, p3].forEach((el, i, arr) => el.addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); if (i < 2) arr[i + 1].focus(); else check(); } }));
+            const form = document.getElementById("signupForm");
+            const p2 = document.getElementById("passwordMain");
+            const p3 = document.getElementById("passwordConfirm");
+
+            // Ακούμε το event της υποβολής (submit) της φόρμας
+            form.addEventListener("submit", function (e) {
+                
+                // Ελέγχουμε αν οι κωδικοί ΔΕΝ ταιριάζουν
+                if (p2.value !== p3.value) {
+                    // Σταματάμε την υποβολή της σελίδας
+                    e.preventDefault(); 
+                    
+                    // Εμφανίζουμε το Modal του Bootstrap
+                    new bootstrap.Modal(document.getElementById("passwordErrorModal")).show(); 
+                    
+                    // Αδειάζουμε το πεδίο επιβεβαίωσης για να το ξαναγράψει ο χρήστης
+                    p3.value = ""; 
+                }
+                // Αν οι κωδικοί ταιριάζουν, η JavaScript δεν κάνει τίποτα και η φόρμα υποβάλλεται κανονικά.
+            });
         });
     </script>
 </body>
