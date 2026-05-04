@@ -17,19 +17,26 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-light bg-light mb-4 shadow-sm py-2">
-        <div class="container-fluid d-flex justify-content-between align-items-center px-4 px-lg-5">
+    <!-- Responsive Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4 shadow-sm py-2">
+        <div class="container-fluid px-4 px-lg-5">
             <a class="navbar-brand fs-2 fw-bold d-flex align-items-center text-ballet" href="../index.html">
-                <img src="../photos/BalletArts.png" alt="Ballet Arts Logo" height="80" class="me-3">
+                <img src="../photos/BalletArts.png" alt="Ballet Arts Logo" height="50" class="me-3">
                 Ballet Net
             </a>
                 
-            <div class="d-flex gap-4 align-items-center">
-                <a href="Update_Syllabus.html" class="text-link"> Update Syllabus </a>
-                <a href="View_Schedule_Syllabus.html" class="text-link"> Schedule & Syllabus </a>
-                <a href="Approve_Content.html" class="text-link"> Approve Content </a>
-                <a href="Manage_Schedule.html" class="text-link text-ballet" style="font-weight: 700; border-bottom: 2px solid #8B5A83;"> Manage Schedule </a>
-                <a href="../index.html" class="text-link"> Landing Page </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <div class="navbar-nav gap-3 align-items-center mt-3 mt-lg-0">
+                    <a href="Update_Syllabus.html" class="nav-link text-link"> Update Syllabus </a>
+                    <a href="View_Schedule_Syllabus.html" class="nav-link text-link"> Schedule & Syllabus </a>
+                    <a href="Approve_Content.html" class="nav-link text-link"> Approve Content </a>
+                    <a href="Manage_Schedule.html" class="nav-link text-link text-ballet fw-bold" style="border-bottom: 2px solid #8B5A83;"> Manage Schedule </a>
+                    <a href="../index.html" class="nav-link text-link"> Landing Page </a>
+                </div>
             </div>
         </div>
     </nav>
@@ -38,7 +45,8 @@
     <div class="container-fluid px-4 px-lg-5 mt-4 mb-5">
         
         <div class="d-flex justify-content-between align-items-center mb-5">
-            <h1 class="fw-bold d-flex align-items-center mb-0 text-ballet" style="font-size: 2.5rem;">
+            <!-- Προσαρμοσμένο font-size για κινητά -->
+            <h1 class="fw-bold d-flex align-items-center mb-0 text-ballet fs-2 fs-md-1">
                 <img src="../photos/schedule.png" alt="Schedule" height="42" class="me-3 rounded">
                 Διαχείριση Προγράμματος
             </h1>
@@ -58,10 +66,10 @@
             
             <!-- Αίθουσα 1 -->
             <div class="tab-pane fade show active p-0" id="room1" role="tabpanel">
-                <!-- Πίνακας σε Κάρτα -->
                 <div class="card shadow-sm border-0" style="border-radius: 16px; overflow: hidden;">
                     <div class="table-responsive">
-                        <table class="table table-hover align-middle mb-0 fs-5">
+                        <!-- Προστέθηκε το text-nowrap για ομαλό scroll στα κινητά -->
+                        <table class="table table-hover align-middle mb-0 fs-5 text-nowrap">
                             <thead class="bg-ballet text-white">
                                 <tr>
                                     <th class="py-3 px-4 font-weight-normal border-0">Ώρα</th>
@@ -232,7 +240,8 @@
             <div class="tab-pane fade p-0" id="room2" role="tabpanel">
                 <div class="card shadow-sm border-0" style="border-radius: 16px; overflow: hidden;">
                     <div class="table-responsive">
-                        <table class="table table-hover align-middle mb-0 fs-5">
+                        <!-- Προστέθηκε το text-nowrap για ομαλό scroll στα κινητά -->
+                        <table class="table table-hover align-middle mb-0 fs-5 text-nowrap">
                             <thead class="bg-ballet text-white">
                                 <tr>
                                     <th class="py-3 px-4 font-weight-normal border-0">Ώρα</th>
@@ -346,21 +355,22 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content shadow-lg border-0" style="border-radius: 16px; overflow: hidden;">
               
-                <div class="modal-header text-white bg-ballet border-0 p-4">
+                <!-- Προσαρμοσμένα Paddings -->
+                <div class="modal-header text-white bg-ballet border-0 p-3 p-md-4">
                     <h4 class="modal-title fw-bold" id="editModalLabel">Επεξεργασία Μαθήματος</h4>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Κλείσιμο"></button>
                 </div>
               
-                <div class="modal-body p-5">
+                <div class="modal-body p-3 p-md-5">
                     <form>
                         <div class="mb-4">
                             <label class="form-label text-secondary small text-uppercase fw-bold fs-6">ΩΡΑ</label>
-                            <input type="text" id="editTime" class="form-control border-2 rounded-3 fs-5 p-3" value="17:30 - 18:15">
+                            <input type="text" id="editTime" class="form-control border-2 rounded-3 fs-6 fs-md-5 p-3" value="17:30 - 18:15">
                         </div>
                         
                         <div class="mb-4">
                             <label class="form-label text-secondary small text-uppercase fw-bold fs-6">ΜΑΘΗΜΑ</label>
-                            <select id="editSubject" class="form-select border-2 rounded-3 fs-5 p-3">
+                            <select id="editSubject" class="form-select border-2 rounded-3 fs-6 fs-md-5 p-3">
                                 <option selected>Ballet</option>
                                 <option>Contemporary</option>
                                 <option>Musical</option>
@@ -371,13 +381,14 @@
                         
                         <div class="mb-4">
                             <label class="form-label text-secondary small text-uppercase fw-bold fs-6">ΤΜΗΜΑ / ΕΠΙΠΕΔΟ</label>
-                            <input type="text" id="editLevel" class="form-control border-2 rounded-3 fs-5 p-3" value="Pre-Primary">
+                            <input type="text" id="editLevel" class="form-control border-2 rounded-3 fs-6 fs-md-5 p-3" value="Pre-Primary">
                         </div>
                     </form>
                 </div>
               
-                <div class="modal-footer bg-light border-0 p-4">
-                    <button type="button" class="btn btn-secondary btn-lg px-4 rounded-pill" data-bs-dismiss="modal">Ακύρωση</button>
+                <!-- Responsive Buttons στο Footer -->
+                <div class="modal-footer bg-light border-0 p-3 p-md-4 d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="button" class="btn btn-secondary btn-lg px-4 rounded-pill mb-2 mb-md-0" data-bs-dismiss="modal">Ακύρωση</button>
                     <button type="button" id="saveChangesBtn" class="btn btn-ballet btn-lg px-5 fw-bold shadow-sm rounded-pill" data-bs-dismiss="modal">Αποθήκευση Αλλαγών</button>
                 </div>
               
