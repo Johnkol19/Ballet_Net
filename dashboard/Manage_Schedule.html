@@ -68,7 +68,7 @@
             <div class="tab-pane fade show active p-0" id="room1" role="tabpanel">
                 <div class="card shadow-sm border-0" style="border-radius: 16px; overflow: hidden;">
                     <div class="table-responsive">
-                        <!-- Προστέθηκε ομαλό scroll στα κινητά -->
+                        <!-- Προστέθηκε το text-nowrap για ομαλό scroll στα κινητά -->
                         <table class="table table-hover align-middle mb-0 fs-5 text-nowrap">
                             <thead class="bg-ballet text-white">
                                 <tr>
@@ -240,7 +240,7 @@
             <div class="tab-pane fade p-0" id="room2" role="tabpanel">
                 <div class="card shadow-sm border-0" style="border-radius: 16px; overflow: hidden;">
                     <div class="table-responsive">
-                        <!-- Προστέθηκε για ομαλό scroll στα κινητά -->
+                        <!-- Προστέθηκε το text-nowrap για ομαλό scroll στα κινητά -->
                         <table class="table table-hover align-middle mb-0 fs-5 text-nowrap">
                             <thead class="bg-ballet text-white">
                                 <tr>
@@ -355,6 +355,7 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content shadow-lg border-0" style="border-radius: 16px; overflow: hidden;">
               
+                <!-- Προσαρμοσμένα Paddings -->
                 <div class="modal-header text-white bg-ballet border-0 p-3 p-md-4">
                     <h4 class="modal-title fw-bold" id="editModalLabel">Επεξεργασία Μαθήματος</h4>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Κλείσιμο"></button>
@@ -395,23 +396,31 @@
         </div>
     </div>
     <script>
-        
+        // Μεταβλητή για να θυμόμαστε ποια γραμμή (tr) του πίνακα πατήθηκε
         let currentRow = null;
-        
+    
+        // Βρίσκουμε το Modal
         const editModal = document.getElementById('editModal');
     
+
+        // Χρησιμοποιούμε το έτοιμο event του Bootstrap που "ακούει" πότε ανοίγει το modal
         editModal.addEventListener('show.bs.modal', function (event) {
             
+            // Το κουμπί "Επεξεργασία" που πατήθηκε
             const button = event.relatedTarget;
             
+            // Βρίσκουμε την "κοντινότερη" γραμμή (tr) που περιέχει αυτό το κουμπί
             currentRow = button.closest('tr');
             
+            // Παίρνουμε όλα τα κελιά (td) αυτής της γραμμής
             const cells = currentRow.querySelectorAll('td');
             
+            // Διαβάζουμε το κείμενο από τα 3 πρώτα κελιά
             const time = cells[0].innerText;
             const subject = cells[1].innerText;
             const level = cells[2].innerText;
             
+            // Γράφουμε τα δεδομένα μέσα στα πεδία του Modal
             document.getElementById('editTime').value = time;
             document.getElementById('editSubject').value = subject;
             document.getElementById('editLevel').value = level;
@@ -420,12 +429,15 @@
 
         document.getElementById('saveChangesBtn').addEventListener('click', function () {
             if (currentRow) {
+                // Διαβάζουμε τι νέο έγραψε ο χρήστης στο Modal
                 const newTime = document.getElementById('editTime').value;
                 const newSubject = document.getElementById('editSubject').value;
                 const newLevel = document.getElementById('editLevel').value;
                 
+                // Βρίσκουμε πάλι τα κελιά (td) της ενεργής γραμμής
                 const cells = currentRow.querySelectorAll('td');
                 
+                // Ενημερώνουμε (ζωγραφίζουμε) τον πίνακα με τις νέες τιμές
                 cells[0].innerText = newTime;
                 cells[1].innerText = newSubject;
                 cells[2].innerText = newLevel;

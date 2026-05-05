@@ -17,19 +17,24 @@
 
 <body class="d-flex flex-column min-vh-100">
 
-    <nav class="navbar navbar-light bg-light mb-4 shadow-sm py-2">
-        <div class="container-fluid d-flex justify-content-between align-items-center px-4 px-lg-5">
-
-
-
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4 shadow-sm py-2">
+        <div class="container-fluid px-4 px-lg-5">
+        <!-- Logo -->
             <a class="navbar-brand fs-2 fw-bold d-flex align-items-center text-ballet" href="../index.html">
-
                 <img src="../photos/BalletArts.png" alt="Ballet Arts Logo" height="80" class="me-3"> Ballet Net
             </a>
-            <div class="d-flex gap-4 align-items-center d-none d-lg-flex">
-                <a href="../index.html" class="text-link"> Landing Page </a>
-                <a href="Contact_Us_En.html" class="btn btn-outline-ballet btn-sm rounded-pill px-3 fw-bold">English
-                    🏴󠁧󠁢󠁥󠁮󠁧󠁿</a>
+
+        <!-- Hamburger Button for Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        <!-- Collapsible Links -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <div class="d-flex flex-column flex-lg-row gap-3 align-items-center mt-3 mt-lg-0">
+                    <a href="../index.html" class="text-link"> Landing Page </a>
+                    <a href="Contact_Us_En.html" class="btn btn-outline-ballet btn-sm rounded-pill px-3 fw-bold">English  🇬🇧</a>
+                </div>
             </div>
         </div>
     </nav>

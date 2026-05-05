@@ -19,10 +19,11 @@
 
 <body>
 
-
+    <!-- 1. ΑΛΛΑΓΗ: Το Navbar έγινε Responsive (Hamburger Menu) -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4 shadow-sm py-2">
         <div class="container-fluid px-4 px-lg-5">
             <a class="navbar-brand fs-2 fw-bold d-flex align-items-center text-ballet" href="../index.html">
+                <!-- 2. ΑΛΛΑΓΗ: Το λογότυπο μίκρυνε ελαφρώς (από 80 σε 50) για να μην πιάνει όλη την οθόνη του κινητού -->
                 <img src="../photos/BalletArts.png" alt="Ballet Arts Logo" height="50" class="me-3">
                 Ballet Net
             </a>
@@ -35,7 +36,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <div class="navbar-nav gap-3 align-items-center mt-3 mt-lg-0">
                     <a href="Update_Syllabus.html" class="nav-link text-link"> Update Syllabus </a>
-                    
+                    <!-- Προστέθηκε το class 'nav-link' για να λειτουργεί σωστά στο κάθετο μενού του κινητού -->
                     <a href="View_Schedule_Syllabus.html" class="nav-link text-link text-ballet fw-bold" style="border-bottom: 2px solid #8B5A83;"> Schedule & Syllabus </a>
                     <a href="Approve_Content.html" class="nav-link text-link"> Approve Content </a>
                     <a href="Manage_Schedule.html" class="nav-link text-link"> Manage Schedule </a>
@@ -54,6 +55,7 @@
         </div>
 
         <div class="d-flex justify-content-between align-items-center mb-5 mt-4">
+            <!-- 3. ΑΛΛΑΓΗ: Αφαιρέθηκε το inline font-size: 2.5rem και αντικαταστάθηκε από την κλάση fs-1 του Bootstrap -->
             <h1 class="fw-bold d-flex align-items-center text-ballet mb-0 fs-1">
                 <img src="../photos/dancer.png" alt="Dancer" height="42" class="me-3 rounded">
                 Εκπαιδευτικός Φάκελος
@@ -62,6 +64,7 @@
 
         <div class="row g-4 mb-5">
             
+            <!-- Ωρολόγιο Πρόγραμμα -->
             <div class="col-lg-7">
                 <div class="card shadow-sm border-0 h-100" style="border-radius: 16px; overflow: hidden;">
                     <div class="card-header bg-ballet text-white fw-bold fs-5 py-3 border-0">
@@ -69,6 +72,7 @@
                     </div>
                     <div class="card-body p-0">
                         <div class="table-responsive">
+                            <!-- Σε πίνακες με πολύ κείμενο (όπως το μάθημα & επίπεδο), το table-responsive θα δημιουργήσει αυτόματα scrollbar στο κινητό, διατηρώντας τον πίνακα τακτοποιημένο. -->
                             <table class="table table-hover align-middle mb-0 fs-5 text-nowrap">
                                 <thead class="table-light">
                                     <tr>
@@ -108,11 +112,13 @@
                 </div>
             </div>
 
+            <!-- Πρόοδος Ύλης -->
             <div class="col-lg-5">
                 <div class="card shadow-sm border-0 h-100" style="border-radius: 16px; overflow: hidden;">
                     <div class="card-header bg-ballet text-white fw-bold fs-5 py-3 border-0">
                         Πρόοδος Ύλης (RAD / ISTD)
                     </div>
+                    <!-- 4. ΑΛΛΑΓΗ: To p-4 έγινε p-3 p-md-4 για να έχουμε μικρότερα περιθώρια στις οθόνες κινητών. -->
                     <div class="card-body p-3 p-md-4">
 
                         <div class="mb-4">
